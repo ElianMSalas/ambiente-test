@@ -1,0 +1,145 @@
+<div class="container mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>Chips</h1>
+        <a href="https://v17.material.angular.io/components/chips/overview" class="enlace-con-imagen" target="_blank">
+            <img src="assets/imagenes_general/angular-logo.png" alt="Icono" class="icono-enlace">
+            Enlace al componente original
+        </a>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Descripción</h3>
+        <p>Los chips son elementos visuales compactos, parecidos a etiquetas o botones pequeños, que comunican una entrada, atributo o acción, representando información breve de forma clara y fácil de identificar.
+
+        </p>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Uso del componente</h3>
+        <p>Los chips permiten mostrar etiquetas, categorías o estados, así como realizar acciones simples, como seleccionar, filtrar o eliminar información.</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">    
+        <h3>Diseño y Formato del componente</h3>
+        <p>Los chips se presentan como formas rectangulares redondeadas y se componen de dos elementos clave: un contenedor y un texto de etiqueta, también pueden incluir íconos. 
+        </p>
+        <p>
+            Es importante que el texto de la etiqueta sea claro y conciso, y que comparta el mismo estilo tipográfico que los botones. 
+        </p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Criterios de accesibilidad</h3>
+
+        <h4>Criterios Transversales</h4>
+        <ol>
+            <li>
+                <p>
+                    Contraste: El texto dentro del chip debe ser legible y con contraste adecuado. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Navegación por teclado: Los chips deben ser navegables con Tab y eliminables con Delete o Backspace. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Atributos ARIA: Usar aria-label para chips sin texto visible. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Compatibilidad con lectores de pantalla: Los chips deben ser interpretables como elementos seleccionables. Para chips eliminables, el botón de cierre debe tener aria-label="Eliminar [nombre del chip]".
+                </p>
+            </li>
+        </ol>
+        <h4>Criterios Específicos</h4>
+        <ol>
+            <li>
+                <p>
+                    Etiquetado HTML Semántico: Utilizar listas cuando los chips representen opciones seleccionables.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Etiqueta visible: Asegurar que el texto de la etiqueta sea descriptivo, para que las personas usuarias puedan comprender el propósito sin un contexto adicional.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Foco visible: Si hay un chip interactivo (por ejemplo: que permite eliminar o seleccionar) sean accesibles mediante el teclado y tengan foco visible.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Gestión de estados: Si el chip tiene estados (como seleccionado, desactivado, etc.), estos deben ser perceptibles de manera visual y también comunicarse a los lectores de pantalla mediante atributos ARIA, como aria-selected o aria-disabled.
+                </p>
+            </li>
+        </ol>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Casos de uso de Chips</h3>
+        <mat-table [dataSource]="dataSource" matSort class="tgr-responsive-table with-title">
+        
+          <!-- Columna de Chips -->
+          <ng-container matColumnDef="chip">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Chip </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="Chip">
+              <mat-chip-set class="example-chip" cdkDropList cdkDropListOrientation="horizontal">
+                <mat-chip 
+                  class="example-box"
+                  [ngStyle]="{'background-color': getChipColor(row.chip)}">
+                  {{ row.chip }}
+                </mat-chip>
+              </mat-chip-set>
+            </mat-cell>
+          </ng-container>
+      
+          <!-- Columna de Casos de Uso -->
+          <ng-container matColumnDef="casoDeUso">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Casos de uso </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="Casos de uso">
+              <span class="chip-element">{{ row.casoDeUso }}</span>
+            </mat-cell>
+          </ng-container>
+      
+          <!-- Columna de Otros Conceptos -->
+          <ng-container matColumnDef="otrosConceptos">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Otros conceptos </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="Otros conceptos">
+              <span class="chip-element">{{ row.otrosConceptos }}</span>
+            </mat-cell>
+          </ng-container>
+          
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      
+        </mat-table>
+      </div>
+      
+      
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <!-- Referencias -->
+        <h3>Referencias de uso del componente en proyectos TGR</h3>
+        <ul>
+            <li>
+                <a href="" target="_blank" > Componente chip aplicado en tabla con Estados procesales de una demanda en aplicación Concobra.</a>
+            </li>
+        </ul>
+        <h3>Referencias de uso del componente en otros SD</h3>
+        <ul>
+            <li>
+                <a href="https://m3.material.io/components/chips/overview" target="_blank">Material M3</a>
+            </li>
+            <li>
+                <a href="https://system.design.orange.com/0c1af118d/p/81aa91-chips" target="_blank">Orange Design System</a>
+            </li>
+            <li>
+                <a href="https://nielsendesignsystem.com/components/chip/" target="_blank">Nielsen Design System</a>
+            </li>
+        </ul>   
+    </div>
+</div>

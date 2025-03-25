@@ -1,0 +1,25 @@
+.divider-container {
+    margin: 10px 0;  // Margen alrededor del divisor
+    padding: 5px 0;
+    display: flex;  // Usamos flexbox para asegurar que el divisor ocupe el espacio
+  }
+  
+  .mat-divider-horizontal {
+    width: 100%;  // El divisor ocupará todo el ancho del contenedor
+    margin-top: 10px;  // Separación antes del divisor
+    margin-bottom: 10px;  // Separación después del divisor
+  }
+  
+  .divider-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100px; // Aseguramos que el contenedor tenga suficiente altura
+  }
+  
+  .mat-divider-vertical {
+    margin-left: 10px; // Margen para el divisor vertical
+    height: 100%; // El divisor vertical ocupa toda la altura
+    width: 1px;  // Ancho del divisor vertical
+  }
+  

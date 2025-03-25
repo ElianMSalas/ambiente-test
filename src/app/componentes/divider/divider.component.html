@@ -1,0 +1,131 @@
+<div class="container mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>Divider</h1>
+        <a href="https://v17.material.angular.io/components/divider/overview" class="enlace-con-imagen" target="_blank">
+            <img src="assets/imagenes_general/angular-logo.png" alt="Icono" class="icono-enlace">
+            Enlace al componente original
+        </a>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Descripción</h3>
+        <p>El Divider es un componente visual que funciona como una línea divisoria para separar contenido dentro de una interfaz. </p>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Uso del componente</h3>
+        <p>El Divider se emplea en contextos donde es necesario segmentar visualmente diferentes secciones de contenido relacionadas sin establecer una separación semántica fuerte. </p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">    
+        <h3>Diseño y Formato del componente</h3>
+        <p>El Divider es una línea horizontal o vertical que se puede personalizar en grosor, color y longitud.</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Criterios de accesibilidad</h3>
+
+        <h4>Criterios Transversales</h4>
+        <ol>
+            <li>
+                <p>
+                    Contraste: El Divider debe ser visible sin afectar la jerarquía visual del contenido y debe mantener un contraste suficiente con el fondo para asegurar su percepción sin dificultar la lectura.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Navegación por teclado: Al ser un elemento visual no interactivo, no debe interferir con la navegación por teclado.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Atributos ARIA: Usar role="separator" para que los lectores de pantalla lo identifiquen correctamente cuando la separación tenga significado en la estructura del contenido.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Compatibilidad con lectores de pantalla: Si el Divider es puramente decorativo, se debe ocultar con aria-hidden="true" para evitar distracciones innecesarias en tecnologías de asistencia.
+                </p>
+            </li>
+        </ol>
+        <h4>Criterios Específicos</h4>
+        <ol>
+            <li>
+                <p>
+                    Uso adecuado: No emplear el Divider como sustituto de encabezados, títulos o espacios en blanco.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Contexto: Si la separación de contenido es clave para la comprensión o navegación, combinarlo con h2, section, o aria-labelledby para proporcionar contexto adecuado.
+                </p>
+            </li>
+
+        </ol>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Casos de uso</h3>
+        <mat-table [dataSource]="dataSource" matSort class="tgr-responsive-table with-title">
+          
+          <!-- Columna de Divider -->
+          <ng-container matColumnDef="divider">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Divider </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="Divider">
+              
+              <!-- Mostrar divisor horizontal con espacio visible -->
+              <div *ngIf="row.divider === 'Divider ejemplo1: divisor horizontal'" class="divider-container">
+                <mat-divider class="mat-divider-horizontal"></mat-divider>
+              </div>
+              
+              <!-- Mostrar divisor vertical dentro de una fila con flexbox -->
+              <div *ngIf="row.divider === 'Divider ejemplo2: divisor vertical'" class="divider-container divider-flex">
+                <mat-divider class="mat-divider-vertical" orientation="vertical"></mat-divider>
+              </div>
+      
+            </mat-cell>
+          </ng-container>
+      
+          <!-- Columna de Tipos -->
+          <ng-container matColumnDef="tipos">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Tipos </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="Tipos">
+              <span>{{ row.tipos }}</span>
+            </mat-cell>
+          </ng-container>
+      
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      
+        </mat-table>
+      </div>
+      
+      
+      
+      
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <!-- Referencias -->
+        <h3>Referencias de uso del componente en proyectos TGR</h3>
+        <ul>
+            <li>
+                <a href="" target="_blank" >Divider horizontal en modal de Conciliación bancaria</a>
+            </li>
+            <li>
+                <a href="" target="_blank" >Divider vertical que separa botones en Concobra</a>
+            </li>
+        </ul>
+        <h3>Referencias de uso del componente en otros SD</h3>
+        <ul>
+            <li>
+                <a href="https://nordhealth.design/components/divider/" target="_blank">Nord Design System</a>
+            </li>
+            <li>
+                <a href="https://m3.material.io/components/divider/guidelines" target="_blank">Material Design 3</a>
+            </li>
+            <li>
+                <a href="https://www.delldesignsystem.com/components/divider/" target="_blank">Dell Design System</a>
+            </li>
+        </ul>   
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<p>solo-testeo works!</p>
+<div class="custom-select" [class.open]="isOpen">
+    <div class="select-header" (click)="toggle()">
+      <span class="title">Carga de Trabajo ({{ total }})</span>
+      <span class="arrow">{{ isOpen ? '▼' : '▶' }}</span>
+    </div>
+  
+    <div class="select-options" *ngIf="isOpen">
+      <div class="option-group">
+        <div class="option-item" *ngFor="let task of tasks">
+          <span class="task-name">{{ task.label }}:</span>
+          <span class="task-value">
+            {{ task.value }}
+            <span class="annotation" *ngIf="task.annotation">{{ task.annotation }}</span>
+          </span>
+        </div>
+      </div>
+  </div>

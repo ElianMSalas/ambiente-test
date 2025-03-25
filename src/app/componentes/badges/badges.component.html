@@ -1,0 +1,169 @@
+<div class="container mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>Badges</h1>
+        <a href="https://material.angular.io/components/badge/overview" class="enlace-con-imagen" target="_blank">
+            <img src="assets/imagenes_general/angular-logo.png" alt="Icono" class="icono-enlace">
+            Enlace al componente original
+        </a>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Descripción</h3>
+        <p>El Badge es un componente visual que se utiliza para resaltar información breve de manera adicional, como notificaciones, estados o contadores, de manera compacta y destacada. Se muestra generalmente como un pequeño indicador sobre otro componente, como botones, iconos o avatares para resaltar cambios o eventos importantes.</p>
+        <p>Desde el punto de vista de accesibilidad, es importante que los Badges sean anunciados correctamente por lectores de pantalla y que tengan suficiente contraste para ser perceptibles por todas las personas usuarias y que proporcione información textual alternativa cuando sea necesario.</p>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Uso del componente</h3>
+        <p>El Badge se usa en situaciones donde se requiere mostrar información adicional sin sobrecargar la interfaz. Es útil en:</p>
+        <ul>
+            <li>Notificaciones o alertas sobre elementos interactivos.</li>
+            <li>Indicadores de cantidad en carritos de compra o listas de mensajes.</li>
+            <li>Como indicador visual en etiquetas de estado (ejemplo: "Nuevo", "En revisión").</li>
+            <li>Asociado a iconos o botones para dar contexto sin necesidad de texto adicional.</li>
+        </ul>
+        <p>Buenas prácticas</p>
+        <ul>
+            <li>
+                No abusar del uso de badges para evitar sobrecargar la interfaz.
+            </li>
+            <li>
+                Asegurar que el badge no sea el único medio para transmitir información (se debe complementar con un texto visible o atributo ARIA cuando sea necesario).
+            </li>
+            <li>
+                Utilizar colores y tamaños adecuados para mantener la jerarquía visual clara. 
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">    
+        <h3>Diseño y Formato del componente</h3>
+        <p>El Badge se muestra como una insignia superpuesta a otro elemento (como un botón o icono).</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Criterios de accesibilidad</h3>
+
+        <h4>Criterios Transversales</h4>
+        <ol>
+            <li>
+                <p>
+                    Contraste: El texto dentro del badge debe cumplir con un contraste mínimo de 4.5:1.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Navegación por teclado: Si el badge es interactivo, debe ser navegable con Tab y activable con Enter o Space.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Atributos ARIA: 
+                </p>
+                <ul>
+                    <li>Usar aria-label o aria-labelledby para proporcionar información adicional cuando el badge transmite un dato importante.</li>
+                    <li>Si el badge solo es decorativo y no aporta información adicional, marcarlo con aria-hidden="true".</li>
+                </ul>
+            </li>
+            <li>
+                <p>Compatibilidad con lectores de pantalla</p>
+                <ul>
+                    <li>Asegurar que la información representada por el badge pueda ser anunciada por tecnologías de asistencia. </li>
+                    <li>Para badges con conteo, describir su propósito con aria-live="polite" si es dinámico.</li>
+                </ul>
+            </li>
+        </ol>
+        <h4>Criterios Específicos</h4>
+        <ol>
+            <li>
+                <p>
+                    Foco visible: Si el badge es interactivo, debe contar con un estado de foco claro y distinguible.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Asociación con el elemento principal: Si el badge acompaña a un botón o ícono, debe estar correctamente relacionado semánticamente con aria-labelledby o aria-describedby.
+                </p>
+            </li>
+        </ol>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Tipos</h3>
+        <mat-table [dataSource]="dataSource" matSort class="tgr-responsive-table with-title">
+          
+          <ng-container matColumnDef="badge">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Badge </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="Badge">
+              <span class="element-table">{{ row.badgeText }}</span>
+            </mat-cell>
+          </ng-container>
+    
+    
+          <ng-container matColumnDef="tipos">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Casos de Uso </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="Tipos">
+              <div *ngIf="row.tipos === 'Text with a badge'" matBadge="4" matBadgeOverlap="false" class="demo-section">Texto</div>
+              
+              <div *ngIf="row.tipos === 'Button with a badge on the left'" class="demo-section">
+                <button mat-raised-button color="primary" matBadge="8" matBadgePosition="before" matBadgeColor="accent">
+                  Action
+                </button>
+              </div>
+    
+              <div *ngIf="row.tipos === 'Button toggles badge visibility'" class="demo-section">
+                <button mat-raised-button matBadge="7" [matBadgeHidden]="hidden" (click)="toggleBadgeVisibility()">
+                  Toggle Badge
+                </button>
+              </div>
+    
+              <div *ngIf="row.tipos === 'Icon with a badge'" class="demo-section">
+                <mat-icon matBadge="15" matBadgeColor="warn" aria-hidden="false">home</mat-icon>
+              </div>
+            </mat-cell>
+          </ng-container>
+    
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    
+        </mat-table>
+      </div>
+
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <!-- Referencias -->
+        <h3>Referencias de uso del componente en proyectos TGR</h3>
+        <ul>
+            <li>
+                <a href="" target="_blank" ></a>
+            </li>
+        </ul>
+        <h3>Referencias de uso del componente en otros SD</h3>
+        <ul>
+            <li>
+                <a href=" https://m3.material.io/components/badges/overview" target="_blank">Material Design 3</a>
+            </li>
+            <li>
+                <a href="https://atlassian.design/components/badge/examples" target="_blank">Atlassian Design System</a>
+            </li>
+            <li>
+                <a href="https://base.uber.com/6d2425e9f/p/90140e-badge/b/98d8e4" target="_blank">Uber Base Design System</a>
+            </li>
+        </ul>   
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+ 
+  

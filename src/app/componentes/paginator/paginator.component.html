@@ -1,0 +1,138 @@
+<div class="container mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>Paginator</h1>
+        <a href="https://v17.material.angular.io/components/paginator/overview" class="enlace-con-imagen" target="_blank">
+            <img src="assets/imagenes_general/angular-logo.png" alt="Icono" class="icono-enlace">
+            Enlace al componente original
+        </a>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Descripción</h3>
+        <p>El Paginador es un componente que permite a las personas usuarias navegar a través de grandes volúmenes de contenido dividiéndolo en páginas. Su objetivo es mejorar la usabilidad y la organización de la información, evitando que se muestre una cantidad excesiva de datos en una sola vista.</p>
+        <p>Desde la perspectiva de accesibilidad, el paginador debe ser fácilmente navegable mediante teclado y compatible con lectores de pantalla para garantizar una experiencia inclusiva.</p>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Uso del componente</h3>
+        <p>El Paginador se usa en situaciones donde se necesita dividir grandes conjuntos de datos en partes más manejables. Es útil en:
+        Casos de uso recomendados:</p>
+        <ul>
+            <li>
+                <p>
+                    Tablas con múltiples registros.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Listados de resultados de búsqueda. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Secciones de contenido con paginación, como noticias o reportes. 
+                </p>
+            </li>
+        </ul>
+        <p>Buenas prácticas</p>
+        <ul>
+            <li>
+                <p>
+                    Usar paginación cuando el contenido supere el número de elementos visibles en una sola vista.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Mantener la navegación clara, con botones de anterior/siguiente y número de páginas. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Permitir que la persona usuaria seleccione la cantidad de elementos por página si es relevante.
+                </p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">    
+        <h3>Diseño y Formato del componente</h3>
+        <p></p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Criterios de accesibilidad</h3>
+
+        <h4>Criterios Transversales</h4>
+        <ol>
+            <li>
+                <p>
+                    Contraste: Asegurarse de que los números de página y los botones de navegación tengan suficiente contraste. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Navegación por teclado: Los controles de paginación deben ser accesibles mediante Tab y permitir la navegación con Enter. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Atributos ARIA: Debe agregar un atributo aria-label o aria-labelledby a mat-paginator con una etiqueta que describa el contenido controlado por el paginador.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Compatibilidad con lectores de pantalla: Los cambios de página y  resultados por página deben narrarse correctamente.
+                </p>
+            </li>
+        </ol>
+        <h4>Criterios Específicos</h4>
+        <ol>
+            <li>
+                <p>
+                    Etiquetado HTML Semántico: Utilizar nav para la paginación.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Manejo de foco: Al cambiar de página, el foco debe mantenerse en el componente del paginador o en el nuevo contenido cargado.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Gestión de estado: La opción de página seleccionada debe ser claramente visible.
+                </p>
+            </li>
+        </ol>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Casos de uso</h3>
+        <mat-paginator [length]="200" [pageSizeOptions]="[10, 50, 100]" aria-label="Select page">
+        </mat-paginator>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <!-- Referencias -->
+        <h3>Referencias de uso del componente en proyectos TGR</h3>
+        <ul>
+            <li>
+                <a href="" target="_blank" ></a>
+            </li>
+        </ul>
+        <h3>Referencias de uso del componente en otros SD</h3>
+        <ul>
+            <li>
+                <a href="https://www.heroui.com/docs/components/pagination" target="_blank">Hero UI</a>
+            </li>
+            <li>
+                <a href="https://carbondesignsystem.com/components/pagination/usage/" target="_blank">Carbon Design System</a>
+            </li>
+            <li>
+                <a href="https://ui.shadcn.com/docs/components/pagination" target="_blank">Shadcn</a>
+            </li>
+            <li>
+                <a href="https://flowbite.com/docs/components/pagination/" target="_blank">Tailwind</a>
+            </li>
+        </ul>   
+    </div>
+</div>

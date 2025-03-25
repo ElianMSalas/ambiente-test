@@ -1,0 +1,194 @@
+<div class="container mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>Buttons Toggle</h1>
+        <a href="https://v17.material.angular.io/components/button-toggle/overview" class="enlace-con-imagen" target="_blank">
+            <img src="assets/imagenes_general/angular-logo.png" alt="Icono" class="icono-enlace">
+            Enlace al componente original
+        </a>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Descripción</h3>
+        <p>El Button Toggle es un componente que permite alternar entre distintos estados dentro de un conjunto de opciones  independientes. Funciona como un grupo de botones en los que puede seleccionar uno o varios dependiendo de la configuración.
+            Desde la perspectiva de accesibilidad, los Button Toggle deben ser correctamente etiquetados y permitir la navegación con teclado para garantizar una experiencia inclusiva.</p>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Uso del componente</h3>
+        <p>El componente Button Toggle se usa cuando se necesita ofrecer opciones de selección visualmente claras, por ejemplo en:</p>
+        <ul>
+            <li>
+                <p>
+                    Filtros y configuraciones de vista.
+                </p>
+
+            </li>
+            <li>
+                <p>
+                    Opciones de selección de formatos o estilos (ej. negrita, cursiva en un editor de texto). 
+                </p>
+
+            </li>
+            <li>
+                <p>
+                    Activación o desactivación de opciones dentro de un formulario.
+                </p>
+            </li>
+        </ul>
+        <p>Buenas prácticas:</p>
+        <ul>
+            <li>
+                <p>
+                    Utilizar etiquetas claras y descriptivas.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Evitar el uso exclusivo de iconos sin texto adicional. 
+                </p>
+  
+            </li>
+            <li>
+                <p>
+                    Asegurar que el estado seleccionado sea perceptible mediante diseño y atributos ARIA.   
+                </p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">    
+        <h3>Diseño y Formato del componente</h3>
+        <p>El Button Toggle está compuesto por los siguientes elementos:</p>
+        <ul>
+            <li>
+                <p>
+                    Grupo de botones : Contenedor que agrupa los toggles cuando se requiere una selección exclusiva o múltiple.
+                </p>
+
+            </li>
+            <li>
+                <p>
+                    Botón individual: Representa cada opción seleccionable dentro del grupo.
+                </p>
+
+ 
+            </li>
+            <li>
+                <p>
+                    Etiqueta o icono: Cada botón puede incluir texto, un icono o ambos para indicar su función.
+                </p>
+
+ 
+            </li>
+            <li>
+                <p>
+                    Estados visuales: Indican si una opción está seleccionada (activo), no seleccionada (inactivo) o si el grupo permite múltiples selecciones.
+                </p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Criterios de accesibilidad</h3>
+
+        <h4>Criterios Transversales</h4>
+        <ol>
+            <li>
+                <p>
+                    Contraste: Diferenciar visualmente los estados de selección usando color y/o iconografía. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Navegación por teclado: Navegable mediante Tab, estado debe alternarse con las teclas Enter y Space. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Atributos ARIA: Si los botones tienen solo iconos, incluir aria-label para describir su función.Para toggles múltiples, usar aria-pressed="true/false" en cada botón para indicar el estado de selección.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Compatibilidad con lectores de pantalla: Los lectores de pantalla deben anunciar el estado del toggle.
+                </p>
+            </li>
+        </ol>
+        <h4>Criterios Específicos</h4>
+        <ol>
+            <li>
+                <p>
+                    Etiquetado HTML Semántico: Utilizar button con atributos adecuados. Utilizar role="group" si los botones deben tratarse como un conjunto.
+
+                </p>
+            </li>
+            <li>
+                <p>
+                    Foco visible: Cuando un botón recibe foco, debe mostrarse un contorno claro.
+
+                </p>
+            </li>
+
+        </ol>
+    </div>
+    
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Casos de uso</h3>
+        <mat-table [dataSource]="dataSource" matSort class="tgr-responsive-table with-title">
+      
+          <ng-container matColumnDef="buttons toggle">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Tipos </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="Tipos">
+              <span class="element-table">{{ row.badgeText }}</span>
+            </mat-cell>
+          </ng-container>
+      
+          <ng-container matColumnDef="tipos">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Buttons Toggle </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="Tipos">
+              <!-- Toggle único -->
+              <div *ngIf="row.tipos === 'Toggle único: Una sola opción seleccionable.'" class="demo-section">
+                <mat-button-toggle-group name="uniqueToggle" [(ngModel)]="selectedToggle" aria-label="Toggle único: Una sola opción seleccionable.">
+                  <mat-button-toggle value="Enviar al Banco CLP">Enviar al Banco CLP</mat-button-toggle>
+                  <mat-button-toggle value="Otra Plataforma CLP">Otra Plataforma CLP</mat-button-toggle>
+                  <mat-button-toggle value="Envío al Banco USD">Envío al Banco USD</mat-button-toggle>
+                </mat-button-toggle-group>
+              </div>
+      
+              <!-- Toggle múltiple -->
+              <div *ngIf="row.tipos === 'Toggle múltiple: Varias opciones seleccionables.'" class="demo-section">
+                <mat-button-toggle-group name="multipleToggle" [(ngModel)]="selectedMultiple" aria-label="Toggle múltiple: Varias opciones seleccionables." multiple>
+                  <mat-button-toggle value="Enviar al Banco CLP">Enviar al Banco CLP</mat-button-toggle>
+                  <mat-button-toggle value="Otra Plataforma CLP">Otra Plataforma CLP</mat-button-toggle>
+                  <mat-button-toggle value="Envío al Banco USD">Envío al Banco USD</mat-button-toggle>
+                </mat-button-toggle-group>
+              </div>
+            </mat-cell>
+          </ng-container>
+      
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      
+        </mat-table>
+      </div>
+      
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <!-- Referencias -->
+        <h3>Referencias de uso del componente en proyectos TGR</h3>
+        <ul>
+            <li>
+                <a href="" target="_blank" ></a>
+            </li>
+        </ul>
+        <h3>Referencias de uso del componente en otros SD</h3>
+        <ul>
+            <li>
+                <a href="https://design-systems.sainsburys.co.uk/components/toggle-button/" target="_blank">Sainsburys Design System</a>
+            </li>
+            <li>
+                <a href=" https://system.design.orange.com/0c1af118d/p/59c349-toggle-buttons" target="_blank">Orange Design System</a>
+            </li>
+        </ul>   
+    </div>
+</div>

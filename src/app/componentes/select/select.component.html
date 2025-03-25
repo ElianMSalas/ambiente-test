@@ -1,0 +1,280 @@
+<div class="container mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>Select</h1>
+        <a href="https://v17.material.angular.io/components/select/overview" class="enlace-con-imagen" target="_blank">
+            <img src="assets/imagenes_general/angular-logo.png" alt="Icono" class="icono-enlace">
+            Enlace al componente original
+        </a>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Descripción</h3>
+        <p>El Select se presenta como un menú despegable de opciones predefinidas, que permite a la persona usuaria seleccionar una o varias opciones según sea el caso. </p>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Uso del componente</h3>
+        <p>El Select se emplea cuando es necesario ofrecer una lista de opciones acotada. Su uso es ideal cuando las opciones disponibles no pueden representarse de manera eficiente con botones de radio o casillas de verificación.
+        </p>
+        <p>Casos de uso recomendados:</p>
+        <p>Formularios donde la persona usuaria debe seleccionar una categoría o estado.
+        </p>
+        <p>Configuraciones de perfil o preferencias.
+        </p>
+        <p>Filtrado de información en tablas o listados.
+        </p>
+        <p>Buenas prácticas:</p>
+        <p>Evitar listas de opciones demasiado extensas; si hay muchas opciones, considerar un Autocomplete.
+
+        </p>
+        <p>Proporcionar una opción predeterminada clara, como "Selecciona una opción".
+
+        </p>
+        <p>Mantener consistencia en el orden y la agrupación de las opciones para facilitar la navegación.</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">    
+        <h3>Diseño y Formato del componente</h3>
+        <p>Un select se compone de los siguientes elementos:
+
+        </p>
+        <ul>
+            <li>
+                <p>
+                    Campo desplegable: Contiene al placeholder y está destinado a mostrar la opción seleccionada.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Placeholder: Texto dentro del campo que describe o sugiere un termino o una acción, por ej: "Selecciona".
+                </p>
+            </li>
+            <li>
+                <p>
+                    Menú de opciones: Se despliega al interactuar con el campo.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Icono de despliegue:  Suele ser de forma triangular, indica que el campo se puede desplegar.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Helper: Texto utilizado para la muestra de mensajes de error o ayuda.
+                </p>
+            </li>
+        </ul>
+        <p>Variantes del componente: </p>
+        <ul>
+            <li>
+                <p>
+                    Select Estándar: Permite elegir una sola opción.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Select Múltiple: Permite seleccionar varias opciones con multiple="true".
+                </p>
+            </li>
+            <li>
+                <p>
+                    Select con Grupos: Organiza opciones en categorías mediante mat-optgroup.   
+                </p>
+            </li>
+        </ul>
+        <p>Legibilidad del contenido del componente: </p>
+        <ul>
+            <li>
+                <p>
+                    El ancho del select debe permitir la lectura de valores.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Dependiendo del contexto de uso, se debe tener un ancho mínimo.  
+                </p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Criterios de accesibilidad</h3>
+
+        <h4>Criterios Transversales</h4>
+        <ol>
+            <li>
+                <p>
+                    Contraste: Asegurar que el texto dentro del select y sus opciones tenga suficiente contraste. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Navegación por teclado: 
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            Abrir el Select con Tab o Enter.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Navegar entre opciones con Flechas arriba/abajo.  
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Seleccionar una opción con Enter o Space.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Cerrar el menú con Esc, sin perder la selección realizada. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            En el caso de un select múltiple, debe permitir seleccionar/deseleccionar opciones con Space, usar flechas arriba/abajo para navegar entre opciones y shift + flechas para seleccionar un rango.  
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>
+                    Atributos ARIA: 
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            Si la etiqueta no está visible, se debe utilizar aria-labelledby para asociar el campo con una descripción adecuada.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Usar aria-expanded="true/false" para indicar si el menú está abierto o cerrado.   
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Usar aria-activedescendant para resaltar la opción activa.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Si se usa un Select múltiple, aplicar aria-multiselectable="true". 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Cada opción seleccionable debe incluir aria-selected="true" cuando corresponda.
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>
+                    Compatibilidad con lectores de pantalla: 
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            El lector de pantalla debe anunciar el Select, la opción seleccionada y las opciones disponibles.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Notificar cuando se abre el menú (aria-expanded).  
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Las opciones deben ser leídas cuando se navega a través de ellas.    
+                        </p>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+        <h4>Criterios Específicos</h4>
+        <ol>
+            <li>
+                <p>
+                    Etiquetado HTML semántico: 
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            No usar aria-labelledby si ya hay un mat-label.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Select múltiple (multiple="true") y aria-multiselectable: Cuando se permite la selección múltiple, se debe indicar mediante aria-multiselectable="true" para que los lectores de pantalla lo interpreten correctamente.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Estados de selección (aria-selected): Cada mat-option debe incluir aria-selected="true" cuando está seleccionada para que los lectores de pantalla informen correctamente el estado de la opción. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Manejo de errores y validaciones: Si el Select requiere validaciones, se debe proporcionar retroalimentación accesible con aria-describedby o aria-live="assertive" para que los lectores de pantalla lo anuncien correctamente.     
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>
+                    Uso del color: 
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            No se debe depender únicamente del color para indicar estados (activo, deshabilitado, seleccionado, error).
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Se recomienda combinar color con otros indicadores visuales, como subrayado, íconos o cambios en el grosor del texto.  
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Para estados de error, además del color rojo, se debe proporcionar un mensaje textual de error accesible mediante aria-describedby.  
+                        </p>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Casos de uso</h3>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <!-- Referencias -->
+        <h3>Referencias de uso del componente en proyectos TGR</h3>
+        <ul>
+            <li>
+                <a href="" target="_blank" >Uso de select "Estado Notificación" en proyecto Gestión Notificaciones de Pago.</a>
+            </li>
+        </ul>
+        <h3>Referencias de uso del componente en otros SD</h3>
+        <ul>
+            <li>
+                <a href="https://carbondesignsystem.com/components/select/usage/" target="_blank">Carbon Design System</a>
+            </li>
+            <li>
+                <a href="https://atlassian.design/components/select/examples" target="_blank">Atlassian Design System</a>
+            </li>
+            <li>
+                <a href="https://cloudscape.design/components/select/" target="_blank">Cloudscape Design System</a>
+            </li>
+            <li>
+                <a href="https://mui.com/material-ui/react-select/" target="_blank">Material UI</a>
+            </li>
+        </ul>   
+    </div>
+</div>

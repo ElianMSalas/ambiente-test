@@ -1,0 +1,186 @@
+<div class="container mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>Autocomplete</h1>
+        <a href="https://v17.material.angular.io/components/autocomplete/overview" class="enlace-con-imagen" target="_blank">
+            <img src="assets/imagenes_general/angular-logo.png" alt="Icono" class="icono-enlace">
+            Enlace al componente original
+        </a>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Descripción</h3>
+        <p>El Autocomplete es un campo de entrada de texto que, al interactuar con él, despliega una lista de opciones sugeridas en función de las coincidencias detectadas dentro de un conjunto predefinido, facilitando así la selección de opciones a la persona usuaria.</p>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Uso del componente</h3>
+        <p>El Autocomplete permite agilizar la introducción de datos al ofrecer opciones coincidentes a partir de un número mínimo de caracteres ingresados. Las sugerencias pueden utilizarse para completar información dentro del campo de texto o para redirigir a otra instancia. En caso de no haber coincidencias, el componente puede mostrar un mensaje indicando la ausencia de resultados.</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">    
+        <h3>Diseño y Formato del componente</h3>
+        <p>Un Autocomplete se compone de los siguientes elementos: </p>
+        <ul>
+            <li>
+                Campo de entrada (input): Permite a la persona usuaria ingresar el texto. 
+            </li>
+            <li>
+                Label: Es el título, describe el propósito del campo, ej. nombre, teléfono, dirección, etc. 
+            </li>
+            <li>
+                Placeholder:  Texto dentro del input que describe o sugiere un termino o una acción, por ej: "Escribe o selecciona".
+            </li>
+            <li>
+                Lista de opciones (dropdown): Se despliega automáticamente al ingresar caracteres en el input, mostrando opciones relevantes. Debe ser fácilmente navegable con teclado y clic.
+            </li>
+
+            <li>
+                Indicador de carga (opcional): Si las sugerencias provienen de una fuente externa, se recomienda incluir un ícono o animación que indique que se están cargando resultados.
+            </li>
+
+        </ul>
+        <p>Legibilidad del contenido del componente:</p>
+        <ul>
+            <li>
+                El ancho del autocomplete debe permitir la lectura de valores.
+            </li>
+            <li>
+                Dependiendo del contexto de uso, se debe tener un ancho mínimo﻿.
+            </li>
+        </ul>
+    </div>
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Criterios de accesibilidad</h3>
+
+        <h4>Criterios Transversales</h4>
+        <ol>
+            <li>
+                Contraste: Cumplir con WCAG 2.1 AA o AAA. El área interactiva debe tener un tamaño mínimo de 44x44 px.
+            </li>
+            <li>
+                Navegación por teclado:  El campo de entrada debe ser accesible con Tab, y las opciones del desplegable deben navegarse con las flechas arriba/abajo y seleccionarse con Enter. Se debe permitir cerrar el menú con Esc.
+            </li>
+            <li>
+                Atributos ARIA:
+                <ul>
+                    <li>
+                        Usar aria-haspopup="listbox" en el campo de entrada para indicar la presencia de un desplegable.
+                    </li>
+                    <li>
+                        Aplicar role="listbox" en el contenedor de opciones y role="option" en cada elemento de la lista.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Compatabilidad con lectores de pantalla:
+                <ul>
+                    <li>
+                        Anunciar correctamente las opciones disponibles y los cambios en la lista con aria-live="polite"
+                    </li>
+                    <li>
+                        Utilizar aria-activedescendant para indicar la opción actualmente resaltada en la navegación con teclado.
+                    </li>
+                </ul>
+            </li>
+        </ol>
+        <h4>Criterios Específicos</h4>
+        <ol>
+            <li>
+                Foco visible: Asegurar que el input y las opciones tengan un indicador de foco claro al navegar con teclado.
+            </li>
+            <li>
+                Gestión de estados: 
+                <ul>
+                    <li>
+                        Opciones seleccionadas deben anunciarse correctamente.
+                    </li>
+                    <li>
+                        Si no hay coincidencias, mostrar un mensaje con aria-live="polite" (ej. “No hay resultados”).
+                    </li>
+                    <li>
+                        La animación del desplegable debe ser sutil y rápida, evitando retrasos en la interacción.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Manejo de selección múltiple (si aplica): Si el Autocomplete permite múltiples selecciones (ej. con chips), cada selección debe anunciarse correctamente a los lectores de pantalla.
+            </li>
+            <li>
+                Uso de color: No usar solo color para diferenciar estados (ej. resaltar opciones activas con iconos o bordes).
+            </li>
+            <li>
+                Cierre del menú desplegable: 
+                <ul>
+                    <li>
+                        Permitir cerrar el Autocomplete con Esc o al hacer clic fuera.
+                    </li>
+                    <li>
+                        Si la persona usuaria selecciona una opción con Enter, el menú debe cerrarse automáticamente.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Autocompletado con sugerencias: 
+                <ul>
+                    <li>
+                        Si el campo tiene autocompletado, usar aria-autocomplete="list" para que los lectores de pantalla lo anuncien.
+                    </li>
+                    <li>
+                        Anunciar el número de opciones disponibles cuando se despliega la lista (aria-live).
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Manejo de estados: 
+                <ul>
+                    <li>
+                        aria-expanded="true/false" en el input para indicar si el desplegable está abierto o cerrado.
+                    </li>
+                    <li>
+                        aria-selected="true" en la opción actualmente seleccionada dentro del listbox.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Etiquetado HTML semántico: 
+                <ul>
+                    <li>
+                        aria-haspopup="listbox": Indica que el input tiene un desplegable de tipo lista.
+                    </li>
+                    <li>
+                        aria-expanded="false": Indica el estado del Autocomplete (debe cambiar dinámicamente a "true" cuando se abre).
+                    </li>
+                    <li>
+                        aria-controls="city-listbox": Relaciona el input con la lista desplegable.
+                    </li>
+                    <li>
+                        mat-hint id="city-helper": Mensaje de ayuda asociado al input con aria-describedby.
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <!-- Referencias -->
+        <h3>Referencias de uso del componente en proyectos TGR</h3>
+        <ol>
+            <li>
+                <a href="https://remates.tgr.cl/remates/inicio" target="_blank" >Uso de autocomplete para la búsqueda de comuna en el proyecto Remates</a>
+            </li>
+            <img src="assets/ref_componentes/ref-ac.png" alt="referencia autocomplete tgr" class="ref-ac">
+        </ol>
+        <h3>Referencias de uso del componente en otros SD</h3>
+        <ul>
+            <li>
+                <a href="https://v17.material.angular.io/components/autocomplete/overview" target="_blank">Angular Material</a>
+            </li>
+            <li>
+                <a href="https://v4.mui.com/es/components/autocomplete/" target="_blank">Material UI</a>
+            </li>
+            <li>
+                <a href="https://mui.com/base-ui/react-autocomplete/" target="_blank">MUI Base</a>
+            </li>
+        </ul>   
+    </div>
+</div>

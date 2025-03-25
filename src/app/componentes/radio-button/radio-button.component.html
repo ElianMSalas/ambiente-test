@@ -1,0 +1,107 @@
+<div class="container mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>Radio Button</h1>
+        <a href="https://v17.material.angular.io/components/radio/overview" class="enlace-con-imagen" target="_blank">
+            <img src="assets/imagenes_general/angular-logo.png" alt="Icono" class="icono-enlace">
+            Enlace al componente original
+        </a>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Descripción</h3>
+        <p>Un radio button es un elemento de selección que permite elegir una única opción dentro de un grupo de opciones mutuamente excluyentes.</p>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Uso del componente</h3>
+        <p>Se emplean en formularios, configuraciones y encuestas para garantizar elecciones exclusivas.</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">    
+        <h3>Diseño y Formato del componente</h3>
+        <p>Los radio buttons se presentan como círculos pequeños acompañados de una etiqueta descriptiva. Se componen de dos elementos clave: el botón circular de selección y el texto de la etiqueta, que indica la opción correspondiente.</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Criterios de accesibilidad</h3>
+
+        <h4>Criterios Transversales</h4>
+        <ol>
+            <li>
+                <p>
+                    Contraste: El texto de la etiqueta y el estado visual del radio button deben cumplir con los estándares de contraste de la WCAG (AA o AAA) para garantizar la legibilidad en diferentes condiciones de visualización. Este es un aspecto importante para usuarios con dificultades visuales. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Compatibilidad con lectores de pantalla: Los lectores de pantalla deben anunciar el grupo de botones de radio y el estado seleccionado utilizando el atributo aria-checked, lo que garantiza que las personas con discapacidad visual puedan interactuar de manera efectiva con los radio buttons.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Navegación por teclado: Los botones de radio deben ser seleccionables con las teclas de flecha y la tecla Enter. Esto facilita su uso en formularios donde el usuario puede navegar con el teclado sin necesidad de un ratón.
+                </p>
+            </li>
+
+        </ol>
+        <h4>Criterios Específicos</h4>
+        <ol>
+            <li>
+                <p>
+                    Etiqueta visible: Asegura que la etiqueta asociada al radio button sea descriptiva y clara, permitiendo a las personas usuarias comprender la opción sin necesidad de contexto adicional.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Atributos ARIA: Es importante asociar cada radio button con un grupo mediante los atributos aria-labelledby o aria-describedby, de modo que los usuarios con tecnologías de asistencia puedan identificar correctamente qué grupo de opciones se está presenciando y cuál está seleccionada.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Lectores de pantalla: Utiliza los atributos aria-label o aria-labelledby para proporcionar información adicional cuando sea necesario, asegurando que las personas usuarias con lectores de pantalla puedan interpretar correctamente las opciones disponibles. Además, asociar la etiqueta correctamente al radio button con el atributo for en el label o mediante aria-labelledby.
+                </p>
+            </li>
+
+        </ol>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Casos de uso</h3>
+        <label id="example-radio-group-label">¿Cuál es tu nivel de satisfacción?</label>
+        <mat-radio-group
+        aria-labelledby="example-radio-group-label"
+        class="example-radio-group"
+        [(ngModel)]="respuestaCliente">
+        @for (respuesta of respuestas; track respuesta) {
+            <mat-radio-button class="example-radio-button" [value]="respuesta" color="primary">{{respuesta}}</mat-radio-button>
+
+        }
+        </mat-radio-group>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <!-- Referencias -->
+        <h3>Referencias de uso del componente en proyectos TGR</h3>
+        <ul>
+            <li>
+                <a href="https://app.moqups.com/i5FSHP0ZRtxuwhUh1wjWpUSYHTfrIUEw/edit/page/afa2a9b94" target="_blank" >Concobra</a>
+            </li>
+        </ul>
+        <h3>Referencias de uso del componente en otros SD</h3>
+        <ul>
+            <li>
+                <a href="https://atlassian.design/components/radio/examples" target="_blank">Atlassian</a>
+            </li>
+            <li>
+                <a href="https://carbondesignsystem.com/components/radio-button/usage/" target="_blank">Carbon Design System</a>
+
+            </li>
+            <li>
+                <a href="https://www.delldesignsystem.com/components/radio-button/" target="_blank">Dell Design System</a>
+            </li>
+
+
+        </ul>   
+
+    </div>
+</div>

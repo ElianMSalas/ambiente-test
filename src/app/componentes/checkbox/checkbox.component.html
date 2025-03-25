@@ -1,0 +1,151 @@
+<div class="container mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>Checkbox</h1>
+        <a href="https://v17.material.angular.io/components/checkbox/overview" class="enlace-con-imagen" target="_blank">
+            <img src="assets/imagenes_general/angular-logo.png" alt="Icono" class="icono-enlace">
+            Enlace al componente original
+        </a>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Descripción</h3>
+        <p>El componente Checkbox, o casilla de verificación es un selector múltiple de elementos.</p>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Uso del componente</h3>
+        <p>Permiten seleccionar uno o varios elementos de una lista o tabla según sea necesario. Esto facilita la ejecución de acciones en grupo, como eliminar elementos o continuar un proceso con la selección realizada. Además, pueden tener un funcionamiento dependiente, donde un checkbox principal controla a varios secundarios, permitiendo seleccionar o deseleccionar todos los elementos con un solo click.
+        </p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">    
+        <h3>Diseño y Formato del componente</h3>
+        <p>El diseño de los checkboxes suele ser cuadrado, con un fondo transparente y bordes sutiles cuando están deseleccionados.
+            Al seleccionarlos, el fondo adquiere color y se muestra un ícono de check para indicar la elección.</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Criterios de accesibilidad</h3>
+
+        <h4>Criterios Transversales</h4>
+        <ol>
+            <li>
+                <p>
+                    Contraste deben cumplir con los requisitos de contraste según WCAG 2.1 AA. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Navegación por teclado: Debe ser seleccionable con Space. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Atributos ARIA: El Checkbox debe ser descriptivo por si mismo. Sin embargo, si necesitas un contexto adicional es recomendable utilizar atributos ARIA.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Compatibilidad con lectores de pantalla: Los lectores de pantalla deben anunciar el estado de la casilla usando aria-checked="true/false".
+                </p>
+            </li>
+        </ol>
+        <h4>Criterios Específicos</h4>
+        <ol>
+            <li>
+                <p>
+                    Gestión de estado:  Una vez seleccionada la opción de checkbox, debe ser fácilmente identificatoria, respetando el diseño y formato del componente. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Etiquetado HTML Semántico:
+                </p>
+            </li>
+            <ul>
+                <li>
+                    <p>
+                        Recuerda que para los inputs se debe utilizar la etiqueta input type="checkbox"
+                    </p>
+                </li>
+            </ul>
+        </ol>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Casos de uso</h3>
+        <mat-table [dataSource]="dataSource" matSort class="tgr-responsive-table with-title">
+        
+          <ng-container matColumnDef="tipo">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Tipos </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="Tipo">
+              <span class="element-table">{{ row.tipo }}</span>
+            </mat-cell>
+          </ng-container>
+        
+          <ng-container matColumnDef="ejemplo">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Checkbox </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="Ejemplo">
+                <div *ngIf="row.tipo === 'El checkbox indica que algunas opciones bajo su jerarquía están seleccionadas'" class="demo-section">
+                    <mat-checkbox [checked]="false" [indeterminate]="true" (change)="onCheckboxChange($event)">Indeterminado</mat-checkbox>
+                    </div>
+              <div *ngIf="row.tipo === 'El checkbox está deseleccionado pero habilitado para poder usarlo'" class="demo-section">
+                <mat-checkbox [checked]="false" (change)="onCheckboxChange($event)">Deseleccionado</mat-checkbox>
+              </div>
+        
+              <div *ngIf="row.tipo === 'El checkbox está seleccionado y habilitado en caso de deseleccionar'" class="demo-section">
+                <mat-checkbox [checked]="true" (change)="onCheckboxChange($event)">Seleccionado</mat-checkbox>
+              </div>
+        
+              <div *ngIf="row.tipo === 'El checkbox está dehabilitado para cualquier acción'" class="demo-section">
+                <mat-checkbox [disabled]="true">Deshabilitado</mat-checkbox>
+              </div>
+        
+              <div *ngIf="row.tipo === 'El checkbox está desabilitado con una opción obligatoria ya seleccionada'" class="demo-section">
+                <mat-checkbox [checked]="true" [disabled]="true">Deshabilitado Seleccionado</mat-checkbox>
+              </div>
+        
+            </mat-cell>
+          </ng-container>
+        
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        
+        </mat-table>
+      </div>
+      
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <!-- Referencias -->
+        <h3>Referencias de uso del componente en proyectos TGR</h3>
+        <ul>
+            <li>
+                <a href="" target="_blank" >Seleccion de ROL para pagar contribuciones</a>
+            </li>
+            <li>
+                <a href="" target="_blank" >Selección de algunos elementos</a>
+            </li>
+            <li>
+                <a href="" target="_blank" > Aceptar términos y condiciones</a>
+            </li>
+        </ul>
+        <h3>Referencias de uso del componente en otros SD</h3>
+        <ul>
+            <li>
+                <a href="https://getbootstrap.com/docs/5.0/forms/checks-radios/" target="_blank">Bootstrap</a>
+            </li>
+            <li>
+                <a href="https://flowbite.com/docs/forms/checkbox/" target="_blank">Flowbite</a>
+            </li>
+            <li>
+                <a href="https://www.material-tailwind.com/docs/html/checkbox" target="_blank">Talwind</a>
+            </li>
+            <li>
+                <a href="https://atlassian.design/components/checkbox/examples" target="_blank">Atlassian</a>
+            </li>
+            <li>
+                <a href="https://www.delldesignsystem.com/components/checkbox/" target="_blank">Dell</a>
+            </li>
+        </ul>   
+    </div>
+</div>

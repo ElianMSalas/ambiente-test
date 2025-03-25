@@ -1,0 +1,20 @@
+<h1>Modales</h1>
+<ol>
+    <div class="container">
+        <li>
+            Modal con botón "Entendido"
+        </li>
+        <button mat-raised-button (click)="openDialog()" color="accent">Abrir Modal</button>
+        <app-code-viewer [codeHtml]="codeHtml" [codeTs]="codeTs" [codeScss]="codeScss"></app-code-viewer>
+    </div>
+
+    <div class="container">
+        <li>
+            Modal 2
+        </li>
+        <button mat-raised-button (click)="openDialog2()" color="accent">Abrir Modal</button>
+        <app-code-viewer [codeHtml]="codeHtml2" [codeTs]="codeTs2" [codeScss]="codeScss2"></app-code-viewer>
+    </div>
+</ol>
+
+

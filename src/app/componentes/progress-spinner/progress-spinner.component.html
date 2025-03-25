@@ -1,0 +1,136 @@
+<div class="container mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>Progress Spinner</h1>
+        <a href="https://v17.material.angular.io/components/progress-spinner/overview" class="enlace-con-imagen" target="_blank">
+            <img src="assets/imagenes_general/angular-logo.png" alt="Icono" class="icono-enlace">
+            Enlace al componente original
+        </a>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Descripción</h3>
+        <p>El progress spinner, o círculo de progreso, es un indicador de actividad de un proceso activo. </p>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Uso del componente</h3>
+        <p>El Progress Spinner es un indicador de actividad que admite dos modos de visualización: Determinado (determinate), que muestra el progreso de 0% a 100%, e Indeterminado (indeterminate), que indica una carga en proceso sin un tiempo estimado de finalización.</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">    
+        <h3>Diseño y Formato del componente</h3>
+        <p>El Progress Spinner está compuesto por un círculo centrado acompañado de un mensaje que indica el contexto de la espera en pantalla. 
+        </p>
+        <p>
+            Se recomienda que el mensaje sea claro para mantener la calma a las personas, y acorde al modo del componente. Por ejemplo, "Espera un momento" indica un tiempo de espera indefinido, ideal para el modo indeterminado. En cambio, un mensaje como "Cargando tu documento a la nube" sugiere un progreso medible, por lo que se aplica mejor al modo determinado, que avanza de 0% a 100%. El color puede personalizarse mediante la propiedad color, permitiendo valores como "accent" o "warn".
+        </p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Criterios de accesibilidad</h3>
+
+        <h4>Criterios Transversales</h4>
+        <ol>
+            <li>
+                <p>
+                    Contraste: Debe ser visible y distinguirse del fondo. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Navegación por teclado: No aplica, ya que es un elemento informativo. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Atributos ARIA: Usar role="status" para indicar carga en curso. Incluir aria-live="polite" o aria-label="Cargando...". 
+                </p>
+                <ul>
+                    <li>
+                        Se recomienda no modificar los valores de aria-valuemin y aria-valuemax, ya que esto podría generar incompatibilidades con algunos lectores de pantalla.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>
+                    Compatibilidad con lectores de pantalla: Debe anunciar "Cargando..." mientras el spinner esté visible y desaparecer al finalizar.
+                </p>
+            </li>
+        </ol>
+        <h4>Criterios Específicos</h4>
+        <ol>
+            <li>
+                <p>
+                    Duración: La elección del modo dependerá del proceso y el tiempo de espera; Indeterminado: Para procesos sin un tiempo de finalización estimado. Determinado: Para cargas con un progreso medible de 0% a 100%.
+                </p>
+            </li>
+        </ol>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Casos de uso</h3>
+        <mat-table [dataSource]="dataSource" matSort class="tgr-responsive-table with-title">
+          
+          <ng-container matColumnDef="progressSpinner">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Progress Spinner </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="Progress Spinner">
+              
+              <!-- Uso indeterminado con mensaje indicativo de espera -->
+              <div *ngIf="row.progressSpinner === 'Uso indeterminado con mensaje indicativo de espera'" class="spinner-container">
+                <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+                <p>Cargando, por favor espere...</p>
+              </div>
+      
+              <!-- Uso determinado con mensaje indicativo de una acción -->
+              <div *ngIf="row.progressSpinner === 'Uso determinado con mensaje indicativo de una acción'" class="spinner-container">
+                <mat-progress-spinner mode="determinate" [value]="50"></mat-progress-spinner>
+                <p>Procesando... 50% completado</p>
+              </div>
+      
+            <!-- Uso indeterminado con mensaje indicativo de una acción, en horizontal -->
+            <div *ngIf="row.progressSpinner === 'Uso indeterminado con mensaje indicativo de una acción, en horizontal'" class="spinner-horizontal">
+                <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+                <p class="spinner-text">Subiendo archivo...</p>
+            </div>
+            
+      
+            </mat-cell>
+          </ng-container>
+      
+          <ng-container matColumnDef="tipos">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Tipos </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="Tipos">
+              {{ row.tipos }}
+            </mat-cell>
+          </ng-container>
+      
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </div>
+      
+    <div class="mdl-cell mdl-cell--12-col">
+        <!-- Referencias -->
+        <h3>Referencias de uso del componente en proyectos TGR</h3>
+        <ul>
+            <li>
+                <a href="" target="_blank" >Procesamiento de pareos - PRD070 Conciliación Bancaria</a>
+            </li>
+        </ul>
+        <h3>Referencias de uso del componente en otros SD</h3>
+        <ul>
+            <li>
+                <a href="https://wise.design/components/progress-spinners" target="_blank">Wise Design System</a>
+            </li>
+            <li>
+                <a href="https://m3.material.io/components/progress-indicators/overview" target="_blank">Material M3 Design System</a>
+            </li>
+            <li>
+                <a href="https://mui.com/material-ui/react-progress/" target="_blank">Material UI Design System</a>
+            </li>
+            <li>
+                <a href="https://developer.apple.com/design/human-interface-guidelines/progress-indicators" target="_blank">Apple Design System</a>
+            </li>
+        </ul>   
+    </div>
+</div>

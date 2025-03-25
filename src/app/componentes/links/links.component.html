@@ -1,0 +1,152 @@
+<div class="container mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>Links (Enlaces)</h1>
+        <a href="" class="enlace-con-imagen" target="_blank">
+            <img src="assets/imagenes_general/angular-logo.png" alt="Icono" class="icono-enlace">
+            Enlace al componente original
+        </a>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Descripción</h3>
+        <p>Los Links (Enlaces) permite la navegación entre páginas, secciones dentro de una misma página o recursos externos. Su propósito es entregar una forma clara e intuitiva de redirigir a la personas usuarias hacia información relevante o acciones específicas.
+        </p>
+        <p>
+            Desde una perspectiva de accesibilidad, los enlaces deben ser fácilmente identificables, tener un propósito claro y ser navegables a través del teclado y lectores de pantalla.
+        </p>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Uso del componente</h3>
+        <p>Los enlaces deben utilizarse para acciones de navegación, nunca para ejecutar acciones como envío de formularios o apertura de modales, donde se deben emplear botones.</p>
+        <p>Deben ser descriptivos, además de entregar contexto sobre su destino.</p>
+        <p>Si un enlace abre una nueva pestaña, indicar este comportamiento con un icono y además entregar más contexto con aria-label.</p>
+        <p>Si un enlace se encuentra dentro de un párrafo, debe integrarse de manera natural en la lectura sin interrumpir la comprensión del contenido. </p>
+        <p style="color: #068938; display: inline;">Ejemplo correcto:</p>
+        <p style="display: inline;"> "Para más detalles, revisa nuestra  
+          <a href="" class="enlace-con-imagen" target="_blank">nuestra guía de certificaciones.</a>"</p>
+        
+        <p style="color: #D7232C; display: inline; margin-left: 16px;">Ejemplo incorrecto:</p>
+        <p style="display: inline;"> "Para más detalles, haz clic  
+          <a href="" class="enlace-con-imagen" target="_blank">Aquí</a>"</p>
+        
+          
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">    
+        <h3>Diseño y Formato del componente</h3>
+        <p>Los enlaces deben ser claramente distinguibles del resto del texto, manteniendo coherencia con el diseño general del sistema.</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Criterios de accesibilidad</h3>
+
+        <h4>Criterios Transversales</h4>
+        <ol>
+            <li>
+                <p>
+                    Contraste: El enlace debe cumplir con un contraste mínimo de 4.5:1 respecto al fondo (WCAG 2.1 AA).
+                </p>
+            </li>
+            <li>
+                <p>
+                    Navegación por teclado:  Los botones deben ser navegables con la tecla TAB y activables con las teclas Enter y Space.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Atributos ARIA: Los enlaces deben ser accesibles por defecto sin necesidad de agregar atributos ARIA adicionales. Sin embargo, en algunos casos específicos, es recomendable incluirlos, ejemplo:
+                </p>
+                <ul>
+                    <li>
+                        <p>Si el texto del enlace no es lo suficientemente descriptivo, utilizar aria-label para entregar mayor información y contexto.</p>
+                    </li>
+                    <li>
+                        <p>Si el enlace abre una nueva ventana se debe indicar a través de aria-label, por ejemplo: aria-label="Se abrirá en una nueva ventana".</p>
+                    </li>
+                    <li>
+                        <p>Si el enlace es puramente decorativo, debe incluir aria-hidden="true" para evitar que los lectores de pantalla lo interpreten como interactivo.</p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>
+                    Compatibilidad con lectores de pantalla: Deben tener descripciones claras y anunciar correctamente su propósito y destino.
+                </p>
+            </li>
+        </ol>
+        <h4>Criterios Específicos</h4>
+        <ol>
+            <li>
+                <p>
+                    Foco visible: Al recibir foco, el enlace debe destacar claramente con un contorno o subrayado adicional.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Etiquetado HTML Semántico: Al ser un elemento de navegación, se recomienda utilizar la etiqueta a y siempre debe tener el atributo "href".
+                </p>
+            </li>
+        </ol>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Casos de uso</h3>
+        <mat-table [dataSource]="dataSource" matSort class="tgr-responsive-table with-title">
+            <ng-container matColumnDef="tipo">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Tipo </mat-header-cell>
+                <mat-cell *matCellDef="let row" data-label="Tipo">
+                    <span class="element-table">{{ row.tipo }}</span>
+                </mat-cell>
+            </ng-container>
+    
+            <ng-container matColumnDef="enlace">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Enlace </mat-header-cell>
+                <mat-cell *matCellDef="let row" data-label="Enlace">
+                    
+                    <!-- Enlace estándar -->
+                    <div *ngIf="row.tipo === 'Enlace estándar: Redirige a una página o recurso.'">
+                        <a href="https://v17.material.angular.io/" target="_blank">Enlace a un recurso</a>
+                    </div>
+    
+                    <!-- Enlace con ícono -->
+                    <div *ngIf="row.tipo === 'Enlace con ícono: Redirige a una página y abre en una nueva pestaña.'">
+                        <a href="https://v17.material.angular.io/components" target="_blank" aria-label="Enlace al componente original, se abrirá en una nueva ventana">
+                            <img src="assets/imagenes_general/angular-logo.png" alt="Icono" class="icono-enlace"> Enlace al componente original
+                        </a>
+                    </div>
+    
+                </mat-cell>
+            </ng-container>
+    
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+    
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <!-- Referencias -->
+        <h3>Referencias de uso del componente en proyectos TGR</h3>
+        <ul>
+            <li>
+                <a href="" target="_blank" >Uso de enlace que abre en una nueva pestaña en proyectos de Portal Municipa</a>
+            </li>
+            <li>
+                <a href="" target="_blank" >Uso de enlace que abre en una nueva pestaña en Concobra</a>
+            </li>
+        </ul>
+        <h3>Referencias de uso del componente en otros SD</h3>
+        <ul>
+            <li>
+                <a href="https://carbondesignsystem.com/components/button/usage/" target="_blank">Carbon Design System</a>
+            </li>
+            <li>
+                <a href="https://developer.microsoft.com/en-us/fluentui#/controls/web/link" target="_blank">Fluent UI</a>
+            </li>
+            <li>
+                <a href="https://m3.material.io/components/links/overview" target="_blank">Material M3</a>
+            </li>
+        </ul>   
+    </div>
+</div>

@@ -1,0 +1,11 @@
+.spinner-horizontal {
+    display: flex;
+    align-items: center;
+    gap: 10px; // Espacio entre el spinner y el texto
+  }
+  
+  .spinner-text {
+    margin: 0; // Asegura que el texto no tenga margen extra
+    font-size: 16px; // Ajusta el tamaño de fuente según necesidad
+  }
+  

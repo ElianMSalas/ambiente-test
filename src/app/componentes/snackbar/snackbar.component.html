@@ -1,0 +1,103 @@
+<div class="container mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>Snackbar</h1>
+        <a href="https://v17.material.angular.io/components/snack-bar/overview" class="enlace-con-imagen" target="_blank">
+            <img src="assets/imagenes_general/angular-logo.png" alt="Icono" class="icono-enlace">
+            Enlace al componente original
+        </a>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Descripción</h3>
+        <p>Los snackbars notifican sobre un proceso que se está ejecutando o ya se realizó.
+        </p>
+        <p>
+            Aparecen temporalmente en la parte inferior o superior de la pantalla, sin interrumpir la experiencia.
+        </p>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Uso del componente</h3>
+        <p>Snackbar es un componente de alerta temporal que aparece en la parte superior o inferior de la pantalla para entregar información. Puede incluir un botón de acción opcional o desaparece automáticamente tras un corto período, o al hacer clic en el botón. </p>
+        <p>No debe interrumpir la experiencia ni bloquear la navegación, permitiendo que se interactúe libremente con el contenido de la página. Los iconos se usarán en color #ffffff, a excepción de los iconos afirmativos de confirmación. </p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">    
+        <h3>Diseño y Formato del componente</h3>
+        <p>El snackbar está compuesto por un contenedor que agrupa el mensaje principal, opcionalmente una acción para cerrarlo y un icono.
+
+            Su ancho depende exclusivamente del contenido dentro de el, y sus iconos dependerán del criterio del diseñador durante el proceso. </p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Criterios de accesibilidad</h3>
+
+        <h4>Criterios Transversales</h4>
+        <ol>
+            <li>
+                <p>
+                    Contraste: Debe ser legible y destacar del fondo. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Navegación por teclado: Se cierra con Esc o automáticamente tras unos segundos. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Atributos ARIA: Usar role="status" si es informativo y role="alert" si es crítico. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Compatibilidad con lectores de pantalla: Debe anunciarse al aparecer y permitir que el usuario lo lea antes de desaparecer.
+                </p>
+            </li>
+        </ol>
+        <h4>Criterios Específicos</h4>
+        <ol>
+            <li>
+                <p>
+                    Personalización: Se puede personalizar los anuncios o mensajes estableciendo la propiedad de MatSnackBarConfig.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Call to action / Acción: Un snackbar puede contener solo una acción además de una acción adicional opcional de «descartar» o «cancelar».
+                </p>
+            </li>
+            <li>
+                <p>
+                    Duración: Evita establecer una duración de tiempo para los snackbar que tengan una acción disponible, ya que es posible que las personas usuarias desde el lector de pantalla deseen navegar por el componente. 
+                </p>
+            </li>
+        </ol>
+    </div>
+        
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <!-- Referencias -->
+        <h3>Referencias de uso del componente en proyectos TGR</h3>
+        <ul>
+            <li>
+                <a href="" target="_blank" >Confirmación de pareos con exito - PRD070 Conciliación Bancaria</a>
+            </li>
+        </ul>
+        <h3>Referencias de uso del componente en otros SD</h3>
+        <ul>
+            <li>
+                <a href="https://mui.com/material-ui/react-snackbar/" target="_blank">Material UI</a>
+            </li>
+            <li>
+                <a href="https://m2.material.io/components/snackbars" target="_blank">Material Design</a>
+            </li>
+            <li>
+                <a href="https://designsystem.line.me/LDSM/components/snackbar-ex-en" target="_blank">Line Design System</a>
+            </li>
+            <li>
+                <a href="https://base.uber.com/6d2425e9f/p/72a605-snackbar" target="_blank">Uber Base</a>
+            </li>
+        </ul>   
+    </div>
+</div>

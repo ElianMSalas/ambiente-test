@@ -1,0 +1,188 @@
+<div class="container mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>Buttons (Botones)</h1>
+        <a href="https://v17.material.angular.io/components/button/overview" class="enlace-con-imagen" target="_blank">
+            <img src="assets/imagenes_general/angular-logo.png" alt="Icono" class="icono-enlace">
+            Enlace al componente original
+        </a>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Descripción</h3>
+        <p>Los Botones son unos de los elementos básicos de la interfaz de usuario que permiten la interacción con la aplicación. Este componente ejecuta una acción cuando es presionado, redirige a otras páginas, o dispara eventos en la aplicación.
+
+        </p>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Uso del componente</h3>
+        <p>Los botones deben ser utilizados para realizar acciones como enviar un formulario, confirmar una selección, iniciar un proceso o navegar a otra sección. Es importante priorizar su uso para evitar sobrecargar la interfaz con demasiados botones y garantizar una jerarquía visual clara.</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">    
+        <h3>Diseño y Formato del componente</h3>
+        <p>Los botones se presentan como formas rectangulares redondeadas y que contienen una etiqueta o llamado a la acción, donde también pueden incluir iconos.</p>
+        <p>Las etiquetas de los botones expresan qué acción se producirá cuando se interactúe con ellos. El texto debe ser claro y describir la acción que el usuario realizará.</p>
+        <ul>
+            <li>
+                Se deben utilizar verbos en infinitivo, como por ejemplo: "Ingresar", "Ir a pagar", "Solicitar Beneficio".
+            </li>
+            <li>
+                Si el texto son tres o menos palabras se utiliza el formato Titular; con mayúsculas en las iniciales de las palabras, excepto artículos y preposiciones, por ejemplo: Ir a Pagar.
+            </li>
+            <li>
+                Si el texto son cuatro o más palabras se utiliza el formato Sentencia; con mayúscula sólo en la primera letra, a excepción de nombres de productos, por ejemplo: Solicitar certificado de deuda de Contribuciones.
+            </li>
+        </ul>
+        <p>Si utilizarás solo un icono sin etiqueta, siempre debe ir con un aria-label. Además, si no puedes pensar en un icono apropiado para la acción a representar dentro de 5 segundos, es mejor que sólo se utilice texto para el botón (Regla de los 5 segundos). "Ante cualquier duda, el mejor icono es un texto"</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Criterios de accesibilidad</h3>
+
+        <h4>Criterios Transversales</h4>
+        <ol>
+            <li>
+                <p>
+                    Contraste: Los botones deben cumplir con los requisitos de contraste según WCAG 2.1 AA.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Navegación por teclado:  Los botones deben ser navegables con la tecla TAB y activables con las teclas Enter y Space.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Atributos ARIA: Los botones deben ser accesibles por defecto sin necesidad de agregar atributos ARIA adicionales. Sin embargo, en algunos casos específicos, es recomendable incluirlos, ejemplo:
+                </p>
+                <ul>
+                    <li>
+                        Si el botón no tiene un texto visible, debe agregarse aria-label o aria-labelledby para describir su propósito.
+                    </li>
+                    <li>
+                        Si el botón activa un contenido dinámico (como mostrar u ocultar un menú), se puede usar aria-expanded y aria-controls para indicar el estado.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>
+                    Compatibilidad con lectores de pantalla: Los botones deben tener etiquetas claras y descriptivas, ejemplo: button aria-label="Guardar cambios"
+                </p>
+            </li>
+        </ol>
+        <h4>Criterios Específicos</h4>
+        <ol>
+            <li>
+                <p>
+                    Gestión de estados: Cuando un botón está deshabilitado, debe ser marcado con el atributo HTML "disabled", además de tomar la apariencia correspondiente.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Foco visible: El estado de foco (cuando el botón recibe la interacción de un teclado o dispositivo de asistencia) debe ser claro. Se recomienda un borde visible o un sombreado suave alrededor del botón.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Etiquetado HTML Semántico: Es importante utilizar correctamente las etiquetas de a o button al momento de generar un botón:
+                </p>
+                <ul>
+                    <li>
+                        Se debe utilizar la etiqueta button para cualquier interacción que realice una acción en la página actual.
+                    </li>
+                    <li>
+                        Se debe utilizar la etiqueta a para cualquier interacción que navegue hacia otra página o dirección o también para descargar algún recurso, ejemplo: un menú de navegación o descargar algun PDF o CSV. También debe siempre tener el atributo "href".
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+      <h3>Tipos</h3>
+      <mat-table [dataSource]="dataSource" matSort class="tgr-responsive-table with-title">
+    
+        <ng-container matColumnDef="tipo">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Tipo de Botón </mat-header-cell>
+          <mat-cell *matCellDef="let row" data-label="Tipo">
+            <span class="element-table">{{ row.tipo }}</span>
+          </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="ejemplo">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Ejemplo </mat-header-cell>
+          <mat-cell *matCellDef="let row" data-label="Ejemplo">
+            <div *ngIf="row.tipo === 'Botón Primario'" class="demo-section">
+              <button mat-raised-button color="primary">Primario</button>
+            </div>
+    
+            <div *ngIf="row.tipo === 'Botón Secundario'" class="demo-section">
+              <button mat-outlined-button color tgr-boton-secundario="primary">Secundario</button>
+            </div>
+    
+            <div *ngIf="row.tipo === 'Botón Deshabilitado'" class="demo-section">
+              <button mat-raised-button color="primary" disabled>Deshabilitado</button>
+            </div>
+    
+            <div *ngIf="row.tipo === 'Botón Solo Vista Móvil'" class="demo-section">
+              <button mat-raised-button class="only-mobile">Móvil</button>
+            </div>
+    
+            <div *ngIf="row.tipo === 'Botón Solo con Ícono (Burger Button)'" class="demo-section">
+              <button mat-icon-button><mat-icon>menu</mat-icon></button>
+            </div>
+    
+            <div *ngIf="row.tipo === 'Botones Compuestos'" class="demo-section">
+              <button mat-raised-button color="primary"><mat-icon>add</mat-icon> Agregar</button>
+            </div>
+    
+            <div *ngIf="row.tipo === 'Botón en Tabla'" class="demo-section">
+              <button mat-stroked-button class="small-btn"><mat-icon>edit</mat-icon> Editar</button>
+            </div>
+    
+            <div *ngIf="row.tipo === 'Botón de Acción Comercial'" class="demo-section">
+              <button mat-raised-button color="warn">Pagar</button>
+            </div>
+          </mat-cell>
+        </ng-container>
+    
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    
+      </mat-table>
+    </div>
+    
+      
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <!-- Referencias -->
+        <h3>Referencias de uso del componente en proyectos TGR</h3>
+        <ul>
+            <li>
+                <a href="" target="_blank" >Uso de botones primario y secundario en un formulario de búsqueda en proyecto de Concobra</a>
+            </li>
+            <li>
+                <a href="" target="_blank" >Uso de botones primario, secundario y en tabla en la pantalla principal de Propiedades en Remate</a>
+            </li>
+        </ul>
+        <h3>Referencias de uso del componente en otros SD</h3>
+        <ul>
+            <li>
+                <a href="https://carbondesignsystem.com/components/button/usage/" target="_blank">Carbon Design System</a>
+            </li>
+            <li>
+                <a href="https://atlassian.design/components/button/examples" target="_blank">Atlassian Design System</a>
+            </li>
+            <li>
+                <a href="https://m3.material.io/components/all-buttons" target="_blank">Material M3</a>
+            </li>
+            <li>
+                <a href="https://cloudscape.design/components/button/?tabId=usage" target="_blank">Cloudscape Design System</a>
+            </li>
+            <li>
+                <a href="https://learn.microsoft.com/es-es/windows/apps/design/controls/buttons" target="_blank">Microsoft Design System</a>
+            </li>
+        </ul>   
+    </div>
+</div>

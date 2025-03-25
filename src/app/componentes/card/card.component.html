@@ -1,0 +1,226 @@
+<div class="container mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>Card</h1>
+        <a href="https://v17.material.angular.io/components/card/overview" class="enlace-con-imagen" target="_blank">
+            <img src="assets/imagenes_general/angular-logo.png" alt="Icono" class="icono-enlace">
+            Enlace al componente original
+        </a>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Descripción</h3>
+        <p>La Tarjeta es un componente utilizado para agrupar y organizar contenido relacionado dentro de un contenedor visual. Su propósito es mejorar la legibilidad y la jerarquía de la información en la interfaz, facilitando la navegación y el acceso a contenido relevante.
+        </p>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Uso del componente</h3>
+        <p>El componente Card se utiliza cuando se necesita presentar información de forma modular y estructurada. Es útil para:</p>
+        <ul>
+            <li>
+                <p>
+                    Mostrar información detallada de elementos en tablas, listas o grillas.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Presentar vistas previas de contenido (artículos, productos, documentos, etc.).
+                </p>
+            </li>
+            <li>
+                <p>
+                    Agrupar información relevante en un espacio reducido.
+                </p>
+            </li>
+        </ul>
+        <p>
+            Buenas prácticas:
+        </p>
+        <ul>
+            <li>
+                <p>
+                    Utilizar títulos descriptivos y breves dentro de la tarjeta.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Evitar sobrecargar la tarjeta con demasiada información.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Asegurar una estructura clara con encabezado, contenido y acciones bien diferenciadas.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Mantener una jerarquía visual consistente para mejorar la experiencia de usuario. 
+                </p>
+            </li>
+        </ul>
+        <p>
+            Uso con grillas
+        </p>
+        <ul>
+            <li>
+                <p>
+                    Las tarjetas se pueden alinear y distribuir utilizando el sistema de grillas de Material Design Lite (MDL).
+                </p>
+            </li>
+            <li>
+                <p>
+                    MDL permite ajustar el tamaño de las tarjetas en función del diseño responsivo, asegurando una disposición óptima en distintos dispositivos.
+                </p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">    
+        <h3>Diseño y Formato del componente</h3>
+        <p>Las tarjetas pueden contener la siguiente estructura:
+        </p>
+        <ul>
+            <li>
+                <p>
+                    Encabezado: Puede incluir título, subtítulo e imagen.
+
+                </p>
+            </li>
+            <li>
+                <p>
+                    Contenido: Información principal de la tarjeta.
+ 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Acciones: Botones o enlaces asociados.
+ 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Imagen o Icono: Opcional, para mejorar el contexto visual.
+   
+                </p>
+            </li>
+        </ul>
+        <p>También incluyen elevación del componente que se muestra en la apariencia en forma de sombra que bordea al componente y que lo destaca de otros elementos más planos.</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Criterios de accesibilidad</h3>
+
+        <h4>Criterios Transversales</h4>
+        <ol>
+            <li>
+                <p>
+                    Contraste: El contenido dentro de la tarjeta debe ser legible y tener suficiente contraste. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Navegación por teclado: Si la tarjeta es interactiva, debe recibir foco y ser navegable con la tecla TAB y activable con las teclas Enter y Space.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Atributos ARIA: No es necesario aplicar atributos ARIA si la tarjeta es solo un contenedor visual sin una agrupación de contenido significativa. En estos casos, el contenido dentro de la tarjeta debe seguir las prácticas estándar de accesibilidad recomendadas por cada uno.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Compatibilidad con lectores de pantalla: El contenido de las tarjetas debe tener etiquetas claras y descriptivas.
+                </p>
+            </li>
+        </ol>
+        <h4>Criterios Específicos</h4>
+        <ol>
+            <li>
+                <p>
+                    Foco visible: Dependiendo del uso de la tarjeta en la interfaz, se recomienda definir el comportamiento del foco:
+
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            Si la tarjeta es interactiva (Se puede hacer clic o actúa como un botón/enlace):
+                        </p>
+
+                    </li>
+                    <ul>
+                        <li>
+                            <p>
+                                Se debe asignar tabindex="0" para que sea accesible con Tab y activable con Enter o Space.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Se recomienda role="button" o role="link" si la tarjeta desencadena una acción o redirige a otra página.
+                            </p>
+                        </li>
+                    </ul>
+                    <li>
+                        <p>Si la tarjeta no es interactiva pero puede recibir foco (por ejemplo, si contiene información relevante para la navegación):</p>
+                    </li>
+                    <ul>
+                        <li>
+                            <p>
+                                Se puede asignar tabindex="-1" para que pueda recibir foco programáticamente, pero sin interrumpir la navegación con Tab.
+                            </p>
+                        </li>
+                    </ul>
+                    <li>
+                        <p>
+                            Si la tarjeta es puramente decorativa (por ejemplo, para estilo o estructura visual):
+                        </p>
+                    </li>
+                    <ul>
+                        <li>
+                            No debe recibir foco y el contenido dentro de ella debe seguir el flujo estándar del documento.
+                        </li>
+                    </ul>
+                </ul>
+            </li>
+        </ol>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Casos de uso</h3>
+        <mat-card class="example-card">
+            <mat-card-content class="card-content">
+                <h1>Título H1 a H4, o párrafo</h1>
+                <p>{{longText}}</p>
+                <div class="button-container">
+                    <button mat-raised-button color="accent">Primario</button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <!-- Referencias -->
+        <h3>Referencias de uso del componente en proyectos TGR</h3>
+        <ul>
+            <li>
+                <a href="" target="_blank" >Uso de tarjetas como contenedores en Conciliación Bancaria</a>
+            </li>
+            <li>
+                <a href="" target="_blank" >Uso de tarjetas como contenedores en Concobra</a>
+            </li>
+        </ul>
+        <h3>Referencias de uso del componente en otros SD</h3>
+        <ul>
+            <li>
+                <a href="https://carbon-website-git-fork-theiliad-add-horizontal-bar-charts.carbon-design-system.vercel.app/experimental/cards/style/" target="_blank">Carbon Design System</a>
+            </li>
+            <li>
+                <a href="https://m3.material.io/components/cards/overview" target="_blank">Material M3 Design System</a>
+            </li>
+            <li>
+                <a href="https://fluent2.microsoft.design/components/web/react/card/usage" target="_blank">Fluent UI Design System</a>
+            </li>
+        </ul>   
+    </div>
+</div>

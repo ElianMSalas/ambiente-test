@@ -1,0 +1,20 @@
+<div mat-dialog-actions close>
+    <button mat-icon-button mat-dialog-close style="position: absolute; right: 10px; top: 10px;">
+        <mat-icon>close</mat-icon> <!-- Icono de la "X" -->
+      </button>
+</div>
+<div mat-dialog-title>
+    <h2>No hay avisos para hoy 29/10/2024</h2>
+    <!-- Botón de cerrar en la parte superior derecha -->
+
+  </div>
+  
+  <div mat-dialog-content class="content">
+    <p>Se mostrarán los de la última fecha con publicaciones disponibles.</p>
+  </div>
+  
+  <div mat-dialog-actions>
+    <!-- Botón de "Entendido" con mat-accent -->
+    <button mat-raised-button color="accent" (click)="close()">Entendido</button>
+  </div>
+  

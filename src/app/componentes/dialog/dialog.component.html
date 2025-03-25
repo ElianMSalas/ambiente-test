@@ -1,0 +1,193 @@
+<div class="container mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>Dialog (Modal)</h1>
+        <a href="https://v17.material.angular.io/components/dialog/overview" class="enlace-con-imagen" target="_blank">
+            <img src="assets/imagenes_general/angular-logo.png" alt="Icono" class="icono-enlace">
+            Enlace al componente original
+        </a>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Descripción</h3>
+        <p>El Dialog o Modal es un componente que permite mostrar información, alertas o formularios en una ventana emergente, superpuesta al contenido principal de la interfaz. Su propósito es captar la atención y facilitar la interacción con tareas específicas sin necesidad de navegar a otra página.
+
+            Desde el punto de vista de accesibilidad, los diálogos deben estar correctamente etiquetados, permitir navegación por teclado y ser interpretados por tecnologías de asistencia, asegurando una experiencia inclusiva.</p>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Uso del componente</h3>
+        <p>¿Cuando utilizarlo?</p>
+        <ul>
+            <li>
+                <p>
+                    Para mostrar información relevante sin interrumpir el flujo de navegación.
+                </p>
+            </li>
+            <li>
+                <p>
+                    En formularios cortos o confirmaciones de acciones (ej. eliminar un registro).
+                </p>
+            </li>
+            <li>
+                <p>
+                    Para alertas críticas o mensajes importantes que requieran respuesta del usuario.
+                </p>
+            </li>
+        </ul>
+        <p>
+            Buenas prácticas
+        </p>
+        <ul>
+            <li>
+                <p>
+                    Evitar el abuso de modales: No usarlos para información secundaria o irrelevante.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Brindar opciones claras: Asegurar que los botones de acción tengan etiquetas descriptivas (ej. “Aceptar” y “Cancelar” en lugar de “Sí” y “No”).  
+                </p>
+            </li>
+            <li>
+                <p>
+                    Permitir cerrar el diálogo: A través de un botón visible, la tecla Esc y clic fuera del modal cuando no sea una acción crítica.  
+                </p>
+            </li>
+            <li>
+                <p>
+                    Mantener la accesibilidad: Capturar el foco al abrir y devolverlo al elemento previo al cerrar.
+                </p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">    
+        <h3>Diseño y Formato del componente</h3>
+        <p>Estructura básica</p>
+        <ul>
+            <li>
+                <p>
+                    Encabezado: Contiene el título o mensaje principal.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Cuerpo: Espacio donde se muestra el contenido (texto, formularios, alertas, etc.).
+                </p>
+            </li>
+            <li>
+                <p>
+                    Acciones: Botones para confirmar o cerrar el diálogo.
+                </p>
+            </li>
+        </ul>
+        <p>Variantes</p>
+        <ul>
+            <li>
+                <p>
+                    Modal estándar: Información o confirmaciones simples.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Modal con formularios: Campos de entrada para recolección de datos.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Modal de alerta: Mensajes críticos con opciones de acción.
+                </p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Criterios de accesibilidad</h3>
+
+        <h4>Criterios Transversales</h4>
+        <ol>
+            <li>
+                <p>
+                    Contraste:  El contenido del modal debe tener un contraste suficiente respecto al fondo y ser legible. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Navegación por teclado: Asegurarse de que el modal reciba el foco al abrirse y se pueda cerrar con la tecla Esc. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Atributos ARIA: aria-labelledby para anunciar el foco al abri y cerrar.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Compatibilidad con lectores de pantalla:  Los lectores de pantalla deben identificar el título y anunciar el foco al abrirs y cerrar.
+                </p>
+            </li>
+        </ol>
+        <h4>Criterios Específicos</h4>
+        <ol>
+            <li>
+                <p>
+                    Foco visible: El primer elemento interactivo dentro del diálogo debe recibir foco automáticamente.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Evitar bloqueos: No impedir que el usuario salga del modal si lo necesita.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Manejo de grupos: Si el diálogo tiene múltiples opciones, asegurarse de que la navegación sea intuitiva.
+                </p>
+            </li>
+        </ol>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Casos de uso</h3>
+
+    <div class="container">
+            <p>Modal con botón</p>
+        <button mat-raised-button (click)="openDialog()" color="accent">Abrir Modal</button>
+    </div>
+
+
+
+
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <!-- Referencias -->
+        <h3>Referencias de uso del componente en proyectos TGR</h3>
+        <ul>
+            <li>
+                <a href="" target="_blank" >Propiedades en remate</a>
+            </li>
+            <li>
+                <a href="" target="_blank" >Conciliación</a>
+            </li>
+            <li>
+                <a href="" target="_blank" >Concobra</a>
+            </li>
+            <li>
+                <a href="" target="_blank" >Contribuciones</a>
+            </li>
+        </ul>
+        <h3>Referencias de uso del componente en otros SD</h3>
+        <ul>
+            <li>
+                <a href="https://m3.material.io/components/dialogs/overview" target="_blank">Material M3</a>
+            </li>
+            <li>
+                <a href="https://base.uber.com/6d2425e9f/v/0/p/775209-dialog" target="_blank">Uber Base</a>
+            </li>
+            <li>
+                <a href="https://v10.carbondesignsystem.com/patterns/dialog-pattern/" target="_blank">Carbon Design System</a>
+            </li>
+        </ul>   
+    </div>
+</div>

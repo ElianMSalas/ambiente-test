@@ -1,0 +1,37 @@
+.ref-ac, .ac-uso-color, .ac-inactivo, .ac-focus, .ac-text-ingresado, .ac-input-llenado, .ac-sin-coincidencias {
+    width: 100%;
+    height: auto;  /* Para que las imágenes mantengan su proporción */
+}
+
+.ac-op-disp{
+    width:40%
+}
+
+/* Ajustes específicos si quieres limitar aún más el tamaño */
+.ref-ac {
+    max-width: 600px;  /* Se adapta completamente al ancho del contenedor */
+}
+
+.ac-uso-color {
+    max-width: 700px;
+}
+
+.ac-inactivo {
+    max-width: 400px;
+}
+
+.ac-focus {
+    max-width: 550px;
+}
+
+.ac-text-ingresado {
+    max-width: 450px;
+}
+
+.ac-input-llenado {
+    max-width: 300px;
+}
+
+.ac-sin-coincidencias {
+    max-width: 350px;
+}

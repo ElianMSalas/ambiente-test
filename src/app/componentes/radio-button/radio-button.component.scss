@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+
+.container {padding-bottom: 30px;}
+#estructura_rb {
+    width: 700px;
+    height: auto;
+}
+
+.tgr-plantilla-busqueda-avanzada {
+    max-width: 1050px;
+    display: flex;
+    flex: 1;
+    width: 100%;
+    padding: 16px;
+
+    >.mdl-grid {
+        width: 100%;
+        padding: 0;
+    }
+
+    .contenedor-tipo-busqueda {
+        display: flex;
+        flex-direction: column;
+
+        .elementos-basicos {
+            display: flex;
+            flex-direction: row;
+            gap: 1.5rem;
+
+            #label-radio {
+                display: block;
+            }
+
+            .campos-rut {
+                align-items: baseline;
+            }
+
+            .campos-rol,
+            .rol-subrol,
+            .campos-rut {
+                display: flex;
+                gap: 1rem;
+
+                .comuna {
+                    width: 175px;
+                }
+
+                .rol,
+                .subrol {
+                    width: 95px;
+                }
+
+                .rut {
+                    width: 175px
+                }
+
+                .dv {
+                    width: 60px
+                }
+            }
+        }
+    }
+
+    .contenedor-buscar {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .boton-buscar {
+            min-width: 150px;
+            min-height: 44px;
+            font-weight: bold;
+        }
+    }
+}
+
+
+
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-radio-button {
+    margin: 5px;
+  }
+  

@@ -1,0 +1,118 @@
+// Estilos para la barra de herramientas
+mat-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 0 16px;
+  height: 64px;
+  z-index: 1000; // Asegura que la toolbar quede encima del contenido
+
+  .toolbar-actions {
+    display: flex;  /* Asegura que los enlaces estén en una fila */
+    gap: 20px; /* Añade espacio entre los enlaces */
+  }
+
+  // Media query para pantallas pequeñas
+  @media (max-width: 800px) {
+    justify-content: flex-start; /* Alinea a la izquierda los elementos por defecto */
+    
+    .toolbar-logo-link {
+      margin-left: auto;  /* Empuja el logo hacia el centro */
+      margin-right: auto; /* Empuja el logo hacia el centro */
+      position: absolute; /* Asegura que el logo no afecte a otros elementos */
+    }
+
+    .toolbar-actions {
+      display: none; /* Esconde los enlaces (Inicio, Componentes, Plantillas) en pantallas pequeñas */
+    }
+  }
+}
+
+// Estilos para los enlaces en la barra de herramientas
+.toolbar-link {
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+// Estilos para los enlaces en el sidenav
+.sidenav {
+  width: 250px;
+  background-color: white;
+  position: fixed; // Fija el sidenav a la izquierda
+  top: 64px; // Hace que el sidenav empiece debajo de la toolbar
+  left: 0;
+  bottom: 0; // Asegura que termine en la parte inferior de la pantalla
+  z-index: 500; // Asegura que el sidenav esté encima del contenido
+  overflow-y: auto; // Permite el scroll dentro del sidenav si es necesario
+  height: calc(100vh - 64px); // Limita el alto del sidenav al tamaño de la pantalla menos la toolbar
+
+  mat-nav-list {
+    display: block;
+    padding: 0;
+    height: 100%; // Se asegura de que el mat-nav-list no crezca más allá de su contenedor
+    overflow-y: auto; // Añade scroll solo a la lista dentro del sidenav
+
+    a {
+      text-decoration: none;
+      color: #333;
+      padding: 12px 16px;
+      display: block;
+      transition: background 0.3s ease;
+
+      // Aplica el mismo estilo de letra que el título del expansion-panel
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px; // Ajusta según el tamaño que prefieras
+      font-weight: normal; // Si es necesario, puedes ajustar el peso de la fuente
+
+      &:hover, &.active {
+        background-color: #d9e8f5;
+        color: #004481;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+// Estilos para el contenido del sidenav
+mat-sidenav-content {
+  padding-top: 16px;
+  padding-left: 16px; // Añade padding para un margen interior en el contenido
+  box-sizing: border-box;
+}
+
+mat-expansion-panel {
+  box-shadow: none !important;
+  // Aplica el mismo estilo de letra que el menú de navegación
+  .mat-expansion-panel-header {
+    font-family: 'Roboto', sans-serif; 
+    font-size: 16px; // Asegúrate que coincida con los enlaces
+    font-weight: normal;
+  }
+}
+
+// Estilos para el contenedor principal
+mat-sidenav-container {
+  height: 100%; // Asegura que el contenedor tenga la altura completa de la pantalla
+  padding-top: 64px; // Asegura que el contenido no se superponga a la toolbar
+  overflow: hidden; // Evita el scroll del contenedor principal
+}
+
+mat-expansion-panel {
+  box-shadow: none !important;
+}
+
+// Estilos para el logo
+.toolbar-logo-link {
+  display: inline-block; /* Asegura que el logo sea clickeable */
+}
+
+.toolbar-logo {
+  height: 40px;  /* Ajusta el tamaño del logo si es necesario */
+  width: auto;   /* Mantiene la relación de aspecto */
+}

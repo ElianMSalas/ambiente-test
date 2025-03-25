@@ -1,0 +1,236 @@
+<div class="container mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>Expansion Panel</h1>
+        <a href="https://v17.material.angular.io/components/expansion/overview" class="enlace-con-imagen" target="_blank">
+            <img src="assets/imagenes_general/angular-logo.png" alt="Icono" class="icono-enlace">
+            Enlace al componente original
+        </a>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Descripción</h3>
+        <p>El Expansion Panel es un componente interactivo que permite mostrar u ocultar contenido   de una interfaz. 
+        </p>
+        <p>Su propósito es optimizar el uso del espacio en pantalla al permitir que las personas usuarias expandan solo la información relevante cuando la necesiten.</p>
+        <p>Desde la perspectiva de accesibilidad, el Expansion Panel mejora la experiencia del usuario al reducir la sobrecarga de información visual y permitir una navegación eficiente, especialmente para quienes utilizan tecnologías de asistencia.</p>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Uso del componente</h3>
+        <p>El Expansion Panel se emplea cuando se necesita presentar información adicional sin sobrecargar la interfaz. 
+            Se recomienda utilizarlo en:</p>
+            <ul>
+                <li>
+                    <p>
+                        Formularios con secciones opcionales o configuraciones avanzadas.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Secciones de detalle en tablas o tarjetas.  
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Listados de preguntas frecuentes (FAQs).  
+                    </p>
+                </li>
+            </ul>
+            <p>Buenas prácticas</p>
+            <ul>
+                <li>
+                    <p>
+                        Usar títulos descriptivos que indiquen claramente el contenido del panel.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Mantener el estado expandido o colapsado persistente si es relevante para la persona usuaria.  
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Evitar anidar múltiples Expansion Panels, ya que esto puede dificultar la navegación y accesibilidad.  
+                    </p>
+                </li>
+            </ul>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">    
+        <h3>Diseño y Formato del componente</h3>
+        <p>El Expansion Panel en Angular Material se compone de:</p>
+        <ul>
+            <li>
+                <p>
+                    Encabezado (cerrado) : Actúa como activador y tiene una altura mínima para garantizar accesibilidad y facilidad de interacción. Sutamaño se mantiene constante en estado colapsado, sin importar el contenido dentro del panel.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Contenido expandible: La altura del panel completo dependerá del contenido interno, si el contenido es extenso, el panel se ajusta a la información mostrada.   
+                </p>
+            </li>
+            <li>
+                <p>
+                    Iconos o botones de acción: Pueden ir opcionales dentro del encabezado. 
+                </p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Criterios de accesibilidad</h3>
+
+        <h4>Criterios Transversales</h4>
+        <ol>
+            <li>
+                <p>
+                    Contraste: Asegurar que los textos y controles sea legibles en dintintos niveles de luminosidad y cumplan con los criterios de la WCAG 2.1 AA.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Navegación por teclado: Expandir/colapsar con Enter o Space. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Atributos ARIA: Usar aria-expanded. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Etiquetado HTML Semántico: Usar button para el encabezado del panel. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Compatibilidad con lectores de pantalla: Anunciar cambios de estado con aria-expanded. Asociar encabezados con aria-labelledby.
+                </p>
+            </li>
+        </ol>
+        <h4>Criterios Específicos</h4>
+        <ol>
+            <li>
+                <p>
+                    Foco visible: Asegurar que el foco permanezca dentro del panel expandido si hay elementos interactivos.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Gestión de estados: Si se usa un ícono visual para indicar el estado, complementarlo con aria-label o aria-hidden="true" si es decorativo.
+                </p>
+            </li>
+        </ol>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Casos de uso</h3>
+        <mat-table [dataSource]="dataSource" matSort class="tgr-responsive-table with-title">
+      
+          <!-- Columna para mostrar el título y descripción -->
+          <ng-container matColumnDef="tipos">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Tipos </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="Tipos">
+              <span class="element-table">{{ row.tipos }}</span>
+            </mat-cell>
+          </ng-container>
+      
+          <!-- Columna para mostrar los Expansion Panels -->
+          <ng-container matColumnDef="expansion panel">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Expansion Panel </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="Expansion Panel">
+              <!-- Panel cerrado, modo default -->
+              <div *ngIf="row.tipos === 'Expansion panel cerrado, modo default'" class="demo-section">
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <h4>
+                      Buscar pagos por
+                    </h4>
+                  </mat-expansion-panel-header>
+                  <p>Contenido del panel cerrado, modo default.</p>
+                </mat-expansion-panel>
+              </div>
+      
+              <!-- Panel cerrado, modo focus -->
+              <div *ngIf="row.tipos === 'Expansion panel cerrado, modo focus'" class="demo-section">
+                <mat-expansion-panel [expanded]="false" (focus)="onFocus()">
+                  <mat-expansion-panel-header>
+                    <h4>
+                      Buscar pagos por
+                    </h4>
+                  </mat-expansion-panel-header>
+                  <p>Contenido del panel cerrado, modo focus.</p>
+                </mat-expansion-panel>
+              </div>
+      
+              <!-- Panel cerrado, modo deshabilitado -->
+              <div *ngIf="row.tipos === 'Expansion panel cerrado, modo deshabilitado'" class="demo-section">
+                <mat-expansion-panel [disabled]="true">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Buscar pagos por
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <p>Este panel está deshabilitado.</p>
+                </mat-expansion-panel>
+              </div>
+      
+              <!-- Panel abierto, modo active -->
+              <div *ngIf="row.tipos === 'Expansion panel abierto, modo active'" class="demo-section">
+                <mat-expansion-panel [expanded]="true">
+                  <mat-expansion-panel-header>
+                    <h4>
+                      Buscar pagos por
+                    </h4>
+                  </mat-expansion-panel-header>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. </p>
+                </mat-expansion-panel>
+              </div>
+      
+              <!-- Panel abierto, modo active focus -->
+              <div *ngIf="row.tipos === 'Expansion panel abierto, modo active focus'" class="demo-section">
+                <mat-expansion-panel [expanded]="true" (focus)="onFocus()">
+                  <mat-expansion-panel-header>
+                    <h4>
+                      Buscar pagos por
+                    </h4>
+                  </mat-expansion-panel-header>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.</p>
+                </mat-expansion-panel>
+              </div>
+            </mat-cell>
+          </ng-container>
+      
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      
+        </mat-table>
+      </div>
+      
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <!-- Referencias -->
+        <h3>Referencias de uso del componente en proyectos TGR</h3>
+        <ul>
+            <li>
+                <a href="" target="_blank" >En Propiedades en remate, cuando hay más de una propiedad por día.</a>
+            </li>
+            <li>
+                <a href="" target="_blank" >En Portal Municipal, para comprimir el buscador de Pagos Recibidos.</a>
+            </li>
+        </ul>
+        <h3>Referencias de uso del componente en otros SD</h3>
+        <ul>
+            <li>
+                <a href="https://m1.material.io/components/expansion-panels.html#expansion-panels-usage" target="_blank">Material Design</a>
+            </li>
+            <li>
+                <a href="https://carbondesignsystem.com/components/accordion/usage/" target="_blank">Carbon Design System</a>
+            </li>
+            <li>
+                <a href="https://getbootstrap.com/docs/5.3/components/accordion/" target="_blank">Bootstrap</a>
+            </li>
+        </ul>   
+    </div>
+</div>

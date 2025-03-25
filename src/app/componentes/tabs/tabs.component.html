@@ -1,0 +1,170 @@
+<div class="container mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>Tabs</h1>
+        <a href="https://v17.material.angular.io/components/tabs/overview" class="enlace-con-imagen" target="_blank">
+            <img src="assets/imagenes_general/angular-logo.png" alt="Icono" class="icono-enlace">
+            Enlace al componente original
+        </a>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Descripción</h3>
+        <p>Los tabs o pestañas de navegación que permite organizar el contenido en secciones separadas dentro de una misma página. Permiten cambiar entre secciones sin recargar ni salir de la vista actual.</p>
+        <p>Cada pestaña representa una categoría de información y, al hacer clic en ella,se muestra el contenido asociado. Esto facilita la navegación y ayuda a encontrar información sin necesidad de hacer mucho scroll o cambiar de página.</p>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Uso del componente</h3>
+        <p>Los tabs o pestañas se utilizan generalmente para:</p>
+        <ul>
+            <li>
+                <p>
+                    Organizar información extensa en categorías separadas.
+
+                </p>
+            </li>
+            <li>
+                <p>
+                    Facilitar la navegación sin interrumpir el flujo de trabajo del usuario.   
+                </p>
+            </li>
+            <li>
+                <p>
+                    Permitir la comparación rápida entre secciones sin perder el contexto.   
+                </p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">    
+        <h3>Diseño y Formato del componente</h3>
+        <p></p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Criterios de accesibilidad</h3>
+
+        <h4>Criterios Transversales</h4>
+        <ol>
+            <li>
+                <p>
+                    Contraste: Asegurarse de que los títulos de las pestañas y los contenidos sean legibles con suficiente contraste. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Navegación por teclado: Permitir que las personas puedan moverse entre las pestañas usando la tecla Tab y cambiar entre ellas con Flecha Izquierda y Flecha Derecha y que se puedan seleccionar una pestaña presionando Enter o Espacio.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Atributos ARIA: Usar role="tablist", role="tab", y role="tabpanel". Las pestañas activas deben tener aria-selected="true". 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Compatibilidad con lectores de pantalla: El lector de pantalla debe identificar que se trata de un conjunto de pestañas y debe leer las pestañas activas e inactivas adecuadamente. Además, al cambiar de pestaña, el contenido correspondiente debe ser anunciado.
+                </p>
+            </li>
+        </ol>
+        <h4>Criterios Específicos</h4>
+        <ol>
+            <li>
+                <p>
+                    Etiquetado HTML Semántico: Implementar pestañas con button y div role="tabpanel">. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Foco visible:
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            Aplicar un contorno resaltado visible cuando una pestaña recibe el foco del teclado (outline en CSS).
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Evitar que el foco quede atrapado en un elemento no interactivo.
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>
+                    Estado activo:
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            Incluir un atributo aria-selected="true" para indicar que una pestaña está activa.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Usar aria-controls="id-del-panel" para asociar cada pestaña con su contenido. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Proporcionar un contraste adecuado entre pestañas activas e inactivas para mejorar la visibilidad.  
+                        </p>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Estado de los Tabs</h3>
+        <mat-table [dataSource]="tabsInfo" matSort class="tgr-responsive-table with-title">
+          
+          <!-- Columna de Tab -->
+          <ng-container matColumnDef="tab">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Tab </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="Tab">
+              <span>{{ row.tab }}</span>
+            </mat-cell>
+          </ng-container>
+      
+          <!-- Columna de Tipos -->
+          <ng-container matColumnDef="tipos">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Tipos </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="Tipos">
+              <span>{{ row.tipos }}</span>
+            </mat-cell>
+          </ng-container>
+      
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      
+        </mat-table>
+      </div>
+      
+      
+    <div class="mdl-cell mdl-cell--12-col">
+        <!-- Referencias -->
+        <h3>Referencias de uso del componente en proyectos TGR</h3>
+        <ul>
+            <li>
+                <a href="" target="_blank" >En Concobra para navegar por el contenido.</a>
+            </li>
+            <li>
+                <a href="" target="_blank" >En Convenio de pago, para navegar por el contenido.</a>
+            </li>
+        </ul>
+        <h3>Referencias de uso del componente en otros SD</h3>
+        <ul>
+            <li>
+                <a href="https://m3.material.io/components/tabs/overview" target="_blank">Material Design</a>
+            </li>
+            <li>
+                <a href="https://polaris.shopify.com/components/navigation/tabs" target="_blank">Polaris Design System</a>
+            </li>
+            <li>
+                <a href="https://atlassian.design/components/tabs/" target="_blank">Atlassian Design System</a>
+            </li>
+        </ul>   
+    </div>
+</div>

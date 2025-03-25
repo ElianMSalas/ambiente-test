@@ -1,0 +1,205 @@
+<div class="container mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>List (Lista)</h1>
+        <a href="https://v17.material.angular.io/components/list/overview" class="enlace-con-imagen" target="_blank">
+            <img src="assets/imagenes_general/angular-logo.png" alt="Icono" class="icono-enlace">
+            Enlace al componente original
+        </a>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Descripción</h3>
+        <p>Una lista HTML es un componente fundamental en el desarrollo web que permite organizar información de manera estructurada y fácil de leer. Se utiliza para presentar elementos relacionados de forma secuencial o no, lo que facilita la comprensión y la navegación para los usuarios.</p>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Uso del componente</h3>
+        <p>El componente lista se utiliza para mostrar un conjunto de artículos o elementos que deben ser organizados de manera estructurada y clara. Estos elementos se usan principalmente para mostrar información que agrupa categorías, lista de productos, tareas, enlace u otros ítems.</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">    
+        <h3>Diseño y Formato del componente</h3>
+        <p>Este tipo de componente contiene elementos los cual se ordenan de forma natural verticalmente. Angular Material no utiliza el decorativo nativo de HTML, dejándolo como (list-style-type: none;). </p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Criterios de accesibilidad</h3>
+
+        <h4>Criterios Transversales</h4>
+        <ol>
+            <li>
+                <p>
+                    Contraste: Los elementos dentro de una lista deben tener suficiente contraste de texto.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Navegación por teclado: Las listas deben ser navegables con Tab y las opciones deben ser seleccionables con las teclas de flecha.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Atributos ARIA: Usar role="list" y role="listitem" para definir la estructura semántica de la lista.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Compatibilidad con lectores de pantalla: El lector de pantalla debe identificar la lista y leer cada ítem de la lista con aria-live si se actualiza dinámicamente.
+                </p>
+            </li>
+        </ol>
+        <h4>Criterios Específicos</h4>
+        <ol>
+            <li>
+                <p>
+                    Listas con encabezado o grupo de elementos: Asociar cada grupo con un encabezado mediante aria-labelledby para mejorar la comprensión jerárquica.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Listas interactivas (con botones o enlaces dentro): 
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            Asegurar que cada elemento de la lista sea un botón (button) o un enlace (a href="#">) si es clickeable.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Usar aria-pressed="true/false" si el elemento representa un estado alternable.
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>
+                    Listas dinámicas o cargadas asincrónicamente: Implementar aria-live="polite" si la lista se actualiza con nuevos elementos en tiempo real.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Listas con iconos o imágenes: Proporcionar alt en imágenes dentro de listas o usar aria-hidden="true" si son decorativas.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Etiquetado HTML Semántico: Implementar listas con ul y li correctamente.
+                </p>
+            </li>
+        </ol>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Casos de uso</h3>
+        <mat-table [dataSource]="dataSource" matSort class="tgr-responsive-table with-title">
+          <ng-container matColumnDef="list">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> List </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="List">
+              <!-- Ejemplo de cada tipo de lista -->
+              <div *ngIf="row.list === 'Lista básica'">
+                <mat-list>
+                  <mat-list-item>Elemento 1</mat-list-item>
+                  <mat-list-item>Elemento 2</mat-list-item>
+                  <mat-list-item>Elemento 3</mat-list-item>
+                </mat-list>
+              </div>
+      
+              <div *ngIf="row.list === 'Lista anidada'">
+                <mat-list>
+                  <mat-list-item>
+                    <mat-icon matListItemIcon>folder</mat-icon>
+                    <h3 matListItemTitle>Elemento principal</h3>
+                    <p matListItemLine>Subelemento 1</p>
+                    <p matListItemLine>Subelemento 2</p>
+                  </mat-list-item>
+                </mat-list>
+              </div>
+      
+              <div *ngIf="row.list === 'Lista con ícono'">
+                <mat-list>
+                  <mat-list-item>
+                    <mat-icon matListItemIcon>check_circle</mat-icon>
+                    Elemento con ícono
+                  </mat-list-item>
+                </mat-list>
+              </div>
+      
+              <div *ngIf="row.list === 'Lista con ícono y bajada'">
+                <mat-list>
+                  <mat-list-item matSubheader>Sección 1</mat-list-item>
+                  <mat-list-item>
+                    <mat-icon matListItemIcon>folder</mat-icon>
+                    Elemento 1
+                  </mat-list-item>
+                  <mat-divider></mat-divider>
+                  <mat-list-item>
+                    <mat-icon matListItemIcon>folder</mat-icon>
+                    Elemento 2
+                  </mat-list-item>
+                </mat-list>
+              </div>
+      
+              <div *ngIf="row.list === 'Lista básica con descripción'">
+                <mat-list>
+                  <mat-list-item>
+                    <strong>Barquillo:</strong> Dulce crujiente, en forma de cilindro o de cono.
+                  </mat-list-item>
+                </mat-list>
+              </div>
+      
+              <div *ngIf="row.list === 'Lista con selección múltiple'">
+                <mat-list>
+                  <mat-list-item>
+                    <mat-radio-button>Elemento 1</mat-radio-button>
+                  </mat-list-item>
+                  <mat-list-item>
+                    <mat-radio-button>Elemento 2</mat-radio-button>
+                  </mat-list-item>
+                </mat-list>
+              </div>
+            </mat-cell>
+          </ng-container>
+      
+          <ng-container matColumnDef="tipos">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Tipos </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="Tipos">
+              {{ row.tipos }}
+            </mat-cell>
+          </ng-container>
+      
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </div>
+      
+      
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <!-- Referencias -->
+        <h3>Referencias de uso del componente en proyectos TGR</h3>
+        <ul>
+            <li>
+                <a href="" target="_blank" ></a>
+            </li>
+        </ul>
+        <h3>Referencias de uso del componente en otros SD</h3>
+        <ul>
+            <li>
+                <a href="https://carbondesignsystem.com/components/list/style/" target="_blank">Carbon Design System</a>
+            </li>
+            <li>
+                <a href="https://getbootstrap.com/docs/5.3/components/list-group/#basic-example" target="_blank">Bootstrap</a>
+            </li>
+            <li>
+                <a href="https://polaris.shopify.com/components/lists" target="_blank">Polaris Design System</a>
+            </li>
+            <li>
+                <a href="https://www.uxpin.com/studio/blog/list-design/" target="_blank">UX Pin</a>
+            </li>
+            <li>
+                <a href="https://tailwindui.com/components/application-ui/lists/stacked-lists" target="_blank">Tailwind Design System</a>
+            </li>
+        </ul>   
+    </div>
+</div>

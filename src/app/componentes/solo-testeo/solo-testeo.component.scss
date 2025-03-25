@@ -1,0 +1,88 @@
+.custom-select {
+    position: relative;
+    width: 280px;
+    font-family: 'Segoe UI', sans-serif;
+    z-index: 1000;
+  }
+  
+  .select-header {
+    padding: 12px 16px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    background: #ffffff;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s;
+  }
+  
+  .select-header:hover {
+    border-color: #999999;
+  }
+  
+  .arrow {
+    font-size: 0.9em;
+    color: #666666;
+  }
+  
+  .select-options {
+    position: absolute;
+    width: 100%;
+    top: calc(100% + 5px);
+    left: 0;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  .option-group {
+    padding: 8px 0;
+  }
+  
+  .option-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  
+  .task-name {
+    color: #333333;
+    font-weight: 500;
+  }
+  
+  .task-value {
+    color: #222222;
+    font-weight: 600;
+  }
+  
+  .annotation {
+    font-size: 0.75em;
+    color: #666666;
+    margin-left: 4px;
+  }
+  
+  .inscription-footer {
+    padding: 16px;
+    background: #f9f9f9;
+    border-top: 1px solid #eeeeee;
+  }
+  
+  .inscription-label {
+    color: #2c3e50;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  .inscription-amount {
+    color: #27ae60;
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-top: 4px;
+  }

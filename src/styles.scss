@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://front.tgr.cl/schema-20240207/estilos/tgr-MDL.css");
+@import url("https://front.tgr.cl/schema-20240207/estilos/tgr-principal-v17.css");
+
+.enlace-con-imagen {
+    display: flex;
+    align-items: center; /* Alinea la imagen y el texto verticalmente */
+  }
+  
+  .icono-enlace {
+    margin-right: 8px; /* Espacio entre la imagen y el texto */
+    width: 20px; /* Ajusta el tamaño de la imagen si es necesario */
+    height: 20px;
+  }
+

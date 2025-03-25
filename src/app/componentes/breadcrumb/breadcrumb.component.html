@@ -1,0 +1,133 @@
+<div class="container mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>Breadcrumbs</h1>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Descripción</h3>
+        <p>Los breadcrumbs son una secuencia de enlaces que muestran a las personas usuarias su ubicación dentro de la interfaz y el recorrido de navegación realizado. Facilitan la orientación y permiten un acceso rápido a niveles anteriores dentro de la jerarquía del sitio.</p>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Uso del componente</h3>
+        <p>Los breadcrumbs permiten a las personas usuarias, navegar en la interfaz fácilmente por los niveles visitados anteriormente.</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">    
+        <h3>Diseño y Formato del componente</h3>
+        <p>El componente Breadcrumbs se presentan como una secuencia lineal de enlaces jerárquicos que representan el camino de navegación dentro de la interfaz. Su diseño debe ser intuitivo, accesible y alineado con el mapa del sitio para facilitar la orientación.</p>
+        <ul>
+            <li>
+                Los niveles de navegación deben estar separados visualmente mediante un símbolo distintivo (ejemplo: /, >, →).
+            </li>
+            <li>
+                El separador debe ser discreto para no restar importancia a los enlaces.  
+            </li>
+            <li>
+                Cada nivel debe ser clickeable, excepto el último elemento, que representa la ubicación actual. 
+            </li>
+            <li>
+                Debe haber una diferencia visual clara entre enlaces activos e inactivos.
+            </li>
+            <li>
+                Espaciado adecuado entre enlaces para evitar clics accidentales.
+            </li>
+            <li>
+                El color del breadcrumb activo debe diferenciarse del resto sin perder legibilidad.   
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Criterios de accesibilidad</h3>
+
+        <h4>Criterios Transversales</h4>
+        <ol>
+            <li>
+                <p>
+                    Contraste: El texto y los separadores de los breadcrumbs deben ser claramente visibles con un contraste suficiente. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Navegación por teclado: Debe ser navegable con Tab y proporcionar aria-current="page" en el elemento activo. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Atributos ARIA: Usar role="navigation" y aria-label="Ruta de navegación". 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Compatibilidad con lectores de pantalla:  Asegurarse de que los lectores de pantalla reconozcan la navegación con el role="navigation" y el aria-current="page" en el enlace activo.
+                </p>
+            </li>
+        </ol>
+        <h4>Criterios Específicos</h4>
+        <ol>
+            <li>
+                <p>
+                    Ubicación :  Se debe disponer de una lista o elemento que resalte la posición en vivo del usuario dentro de la interfaz.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Cabeceras de sección: Para no tener secuencias de breadcrumbs excesivamente largas, se debe evitar tener un mapa de sitio con niveles extensos,  idealmente, no más de tres a cinco niveles.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Uso del color: La diferencia entre enlaces activos e inactivos debe ser clara, sin depender solo del color.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Evitar truncamiento sin alternativa accesible: Si el breadcrumb colapsa o se trunca en pantallas pequeñas, se debe proporcionar una alternativa accesible, como un menú desplegable con opciones completas.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Manejo de la última ruta (página actual): La última ruta del breadcrumb no debe ser un enlace, ya que representa la página actual, esta debe estar marcada con aria-current="page".
+                </p>
+            </li>
+            <li>
+                <p>
+                    Etiquetado HTML semántico: Los breadcrumbs son la navegación a través del sitio, por lo que se recomienda estructurar correctamente los enlaces dentro de una etiqueta nav. 
+                </p>
+            </li>
+        </ol>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Casos de uso</h3>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <!-- Referencias -->
+        <h3>Referencias de uso del componente en proyectos TGR</h3>
+        <ul>
+            <li>
+                <a href="" target="_blank" ></a>
+            </li>
+        </ul>
+        <h3>Referencias de uso del componente en otros SD</h3>
+        <ul>
+            <li>
+                <a href="https://carbondesignsystem.com/components/breadcrumb/usage/" target="_blank">Carbon Design System</a>
+            </li>
+            <li>
+                <a href="https://atlassian.design/components/breadcrumbs/examples" target="_blank">Atlassian Design System</a>
+            </li>
+            <li>
+                <a href="https://mui.com/material-ui/react-breadcrumbs/" target="_blank">Material UI</a>
+            </li>
+            <li>
+                <a href="https://cloudscape.design/components/breadcrumb-group/" target="_blank">Cloudscape Design System - Amazon</a>
+            </li>
+            <li>
+                <a href="https://learn.microsoft.com/es-es/windows/apps/design/controls/breadcrumbbar" target="_blank">Microsoft Design System</a>
+            </li>
+        </ul>   
+    </div>
+</div>

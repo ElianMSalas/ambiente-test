@@ -1,0 +1,69 @@
+<mat-toolbar>
+  <button mat-icon-button *ngIf="sidenav.mode == 'over'" (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+    <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+  </button>
+  <a [routerLink]="['/']">
+    <img src="assets/tgr-logo-horizontal.svg" alt="Logo" class="toolbar-logo">
+  </a>
+
+  
+
+  <!-- Botón de Inicio y enlaces solo visibles en pantallas grandes -->
+  <div class="toolbar-actions" *ngIf="!isSmallScreen">
+      <a [routerLink]="['/']" class="toolbar-link">Inicio</a>
+      <a [routerLink]="['sdtgr-lab/componentes']" class="toolbar-link">Componentes</a>
+      <a [routerLink]="['sdtgr-lab/plantillas']" class="toolbar-link">Plantillas</a>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="over" [opened]="isSmallScreen ? false : sidenav.opened" class="sidenav">
+    <mat-nav-list>
+      <a *ngFor="let item of principalMenu" 
+         [routerLink]="[item.route]" 
+         routerLinkActive="active" 
+         [routerLinkActiveOptions]="{ exact: true }" 
+         class="sidenav-item" 
+         (click)="closeSidenavOnItemClick($event)">
+        {{ item.label }}
+      </a>
+
+      <!-- Sección de Componentes -->
+      <mat-expansion-panel [expanded]="isComponentsSection" (click)="navigateTo('/sdtgr-lab/componentes')">
+        <mat-expansion-panel-header>
+          <mat-panel-title>Componentes</mat-panel-title>
+        </mat-expansion-panel-header>
+        <a *ngFor="let item of componentsMenu" 
+           [routerLink]="[item.route]" 
+           routerLinkActive="active" 
+           [routerLinkActiveOptions]="{ exact: item.route === 'componentes' }" 
+           class="sidenav-item" 
+           (click)="navigateToAndCloseSidenav($event, item.route)">
+          {{ item.label }}
+        </a>
+      </mat-expansion-panel>
+
+      <!-- Sección de Plantillas -->
+      <mat-expansion-panel [expanded]="isTemplatesSection" (click)="navigateTo('/sdtgr-lab/plantillas')">
+        <mat-expansion-panel-header>
+          <mat-panel-title>Plantillas</mat-panel-title>
+        </mat-expansion-panel-header>
+        <a *ngFor="let item of templatesMenu" 
+           [routerLink]="[item.route]" 
+           routerLinkActive="active" 
+           [routerLinkActiveOptions]="{ exact: item.route === 'plantillas' }" 
+           class="sidenav-item" 
+           (click)="navigateToAndCloseSidenav($event, item.route)">
+          {{ item.label }}
+        </a>
+      </mat-expansion-panel>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+
+</mat-sidenav-container>

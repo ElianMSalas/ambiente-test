@@ -1,0 +1,92 @@
+<div class="container mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>Tooltip</h1>
+        <a href="https://v17.material.angular.io/components/tooltip/overview" class="enlace-con-imagen" target="_blank">
+            <img src="assets/imagenes_general/angular-logo.png" alt="Icono" class="icono-enlace">
+            Enlace al componente original
+        </a>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Descripción</h3>
+        <p>El Tooltip es un elemento emergente que proporciona información adicional o contextual sobre un componente cuando se interactúa con él. </p>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Uso del componente</h3>
+        <p>El Tooltip se utiliza para brindar información breve y complementaria sin sobrecargar la interfaz, además, su contenido debe ser conciso y relevante. </p>
+        <p>Se recomienda no depender exclusivamente del Tooltip para transmitir información crítica, ya que algunas personas usuarias pueden no interactuar con él.</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">    
+        <h3>Diseño y Formato del componente</h3>
+        <p>Se muestra como una caja pequeña que contiene texto explicativo. Su diseño debe ser discreto pero claro, y suele estar ubicado cerca del elemento que describe. El texto debe ser fácil de leer, sin ser demasiado grande ni pequeño.</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Criterios de accesibilidad</h3>
+
+        <h4>Criterios Transversales</h4>
+        <ol>
+            <li>
+                <p>
+                    Contraste: El texto dentro del Tooltip debe cumplir con los estándares WCAG 2.1 AA o AAA para garantizar su legibilidad en distintas condiciones de visualización. Se recomienda un mínimo de 4.5:1 de contraste entre el texto y el fondo.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Navegación por teclado: El Tooltip debe ser accesible mediante teclado, permitiendo activarlo con Tab (focus) y cerrarlo al mover el foco a otro elemento. Debe ser posible activarlo mediante hover (ratón) y desactivarlo al retirar el cursor. Si el Tooltip contiene información esencial, se debe proporcionar una alternativa persistente para quienes no pueden usar el hover.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Atributos ARIA: Usar aria-describedby para asociar el Tooltip con su elemento activador. Si el Tooltip proporciona información a un icono sin texto visible, se recomienda aria-label para describirlo adecuadamente.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Compatibilidad con lectores de pantalla: Los lectores de pantalla deben anunciar el contenido del Tooltip cuando el foco esté en el elemento activador. Si el Tooltip proporciona datos críticos, su contenido debe poder ser leído sin depender de interacción con el mouse.
+                </p>
+            </li>
+        </ol>
+        <h4>Criterios Específicos</h4>
+        <ol>
+            <li>
+                <p>
+                    Etiqueta Visible: El contenido del Tooltip debe ser claro y descriptivo, permitiendo que se comprenda el mensaje sin necesidad de contexto adicional.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Foco Visible: Si el Tooltip está asociado a un elemento interactivo (ejemplo: un botón), debe ser accesible mediante teclado y su activador debe mostrar un foco visible (como un contorno o cambio de color) para indicar su estado.
+                </p>
+            </li>
+        </ol>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Casos de uso</h3>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <!-- Referencias -->
+        <h3>Referencias de uso del componente en proyectos TGR</h3>
+        <ul>
+            <li>
+                <a href="" target="_blank" ></a>
+            </li>
+        </ul>
+        <h3>Referencias de uso del componente en otros SD</h3>
+        <ul>
+            <li>
+                <a href="https://atlassian.design/components/tooltip/examples" target="_blank">Atlassian Design System</a>
+            </li>
+            <li>
+                <a href="https://m3.material.io/components/tooltips/overview" target="_blank">Material Design</a>
+            </li>
+            <li>
+                <a href="https://carbondesignsystem.com/components/tooltip/usage/" target="_blank">Carbon Design System</a>
+            </li>
+        </ul>   
+    </div>
+</div>

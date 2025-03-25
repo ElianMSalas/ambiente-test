@@ -1,0 +1,218 @@
+<div class="container mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>Datepicker</h1>
+        <a href="https://v17.material.angular.io/components/datepicker/overview" class="enlace-con-imagen" target="_blank">
+            <img src="assets/imagenes_general/angular-logo.png" alt="Icono" class="icono-enlace">
+            Enlace al componente original
+        </a>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Descripción</h3>
+        <p>El complemento Datepicker, es un selector de fechas o periodos de tiempo.</p>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Uso del componente</h3>
+        <p>El Datepicker se usa principalmente para seleccionar un rango de fechas o una fecha predeterminada en cualquier proceso dentro del sistema, intranet o sitio web. Posee opciones de comparación de períodos, integración con data de formularios y compatibilidad con validaciones de rango mínimo y máximo. Además, permite formatos de fecha personalizados según la configuración regional y ofrece opciones de accesibilidad, como navegación mediante teclado y compatibilidad con lectores de pantalla. Su diseño flexible facilita su uso en distintos contextos, asegurando una experiencia consistente y eficiente para las personas usuarias</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">    
+        <h3>Diseño y Formato del componente</h3>
+        <p>El Datepicker es un rectángulo horizontal con un estilo outline predeterminada desde la hoja de estilos TGR principal.  Contiene distintos parámetros de búsqueda, formatos de fecha y estados.</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Criterios de accesibilidad</h3>
+
+        <h4>Criterios Transversales</h4>
+        <ol>
+            <li>
+                <p>
+                    Contraste:  Los textos y controles deben cumplir con WCAG 2.1 AA.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Navegación por teclado: Debe ser navegable con Tab y seleccionable con Enter.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Atributos ARIA: El Datepicker debe ser descriptivo por si mismo. Sin embargo, si necesitas un contexto adicional es recomendable utilizar atributos ARIA.
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            MatDatepickerIntl proporciona cadenas para los atributos aria-label. Asegúrese de que el campo de entrada del datepicker tenga una etiqueta clara y descriptiva, ya sea mediante mat-label, aria-label, aria-labelledby o utilizando MatDatepickerIntl.
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>
+                    Compatibilidad con lectores de pantalla: Los lectores de pantalla deben anunciar el formato de fecha esperado e incluir aria-label en el botón de selección de fecha.
+                </p>
+            </li>
+        </ol>
+        <h4>Criterios Específicos</h4>
+        <ol>
+            <li>
+                <p>
+                    Indicador de selección: Asegurar que la fecha seleccionada sea visualmente destacada.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Mensajes de error claros: Mostrar avisos accesibles cuando se ingresa una fecha inválida.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Etiquetado HTML Semántico: 
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            Siempre indica el formato de la fecha (por ejemplo, 'MM/DD/AAAA').
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            En selecciones de rango de fechas, los inputs deben diferenciarse correctamente:  
+                        </p>
+                    </li>
+
+                    <pre><code>
+                        &lt;label for="fechaInicio"&gt;Fecha de inicio:&lt;/label&gt;
+                        &lt;input id="fechaInicio" matInput [matDatepicker]="pickerInicio" aria-labelledby="fechaInicio"&gt;
+                        &lt;mat-datepicker #pickerInicio&gt;&lt;/mat-datepicker&gt;
+                        </code></pre>
+
+                </ul>
+            </li>
+        </ol>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Casos de uso</h3>
+        <mat-table [dataSource]="dataSource" matSort class="tgr-responsive-table with-title">
+        
+          <ng-container matColumnDef="tipos">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Tipos </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="Tipo">
+              <span class="element-table">{{ row.tipos }}</span>
+            </mat-cell>
+          </ng-container>
+          
+          <ng-container matColumnDef="datepicker">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Datepicker </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="Ejemplo">
+              <!-- Ejemplo 1: Selección de fecha unitaria e ícono -->
+              <div *ngIf="row.example === 1">
+                <mat-form-field appearance="fill">
+                  <mat-label>Selecciona una fecha</mat-label>
+                  <input matInput [matDatepicker]="picker1" placeholder="DD/MM/YYYY">
+                  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                  <mat-datepicker #picker1></mat-datepicker>
+                  <mat-hint>MM/DD/YYYY</mat-hint>
+                </mat-form-field>
+              </div>
+              
+              <!-- Ejemplo 2: Selección de fecha unitaria -->
+              <div *ngIf="row.example === 2">
+                <mat-form-field appearance="fill">
+                  <mat-label>Selecciona una fecha</mat-label>
+                  <input matInput [matDatepicker]="picker2" placeholder="MM/YYYY">
+                  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                  <mat-datepicker #picker2 startView="multi-year"></mat-datepicker>
+                  <mat-hint>MM/AAAA</mat-hint>
+                </mat-form-field>
+              </div>
+      
+              <!-- Ejemplo 3: Ingreso de un periodo de tiempo -->
+              <div *ngIf="row.example === 3">
+                <mat-form-field appearance="fill">
+                    <mat-label>Fecha de inicio</mat-label>
+                    <input matInput [matDatepicker]="picker3" [(ngModel)]="startDate" placeholder="DD/MM/YYYY">
+                    <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                    <mat-datepicker #picker3></mat-datepicker>
+                    <mat-hint>DD/MM/AAAA - DD/MM/AAAA</mat-hint>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                    <mat-label>Fecha de fin</mat-label>
+                    <input matInput [matDatepicker]="picker4" [(ngModel)]="endDate" placeholder="DD/MM/YYYY">
+                    <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+                    <mat-datepicker #picker4></mat-datepicker>
+                </mat-form-field>
+
+              </div>
+      
+              <!-- Ejemplo 4: Estado de error -->
+              <div *ngIf="row.example === 4">
+                <mat-form-field appearance="fill">
+                    <mat-label>Fecha de inicio</mat-label>
+                    <input matInput [matDatepicker]="picker" [(ngModel)]="startDate" name="startDate" required placeholder="DD/MM/YYYY" (ngModelChange)="isTouched = true">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                
+                    <!-- Mostrar el error si la fecha es inválida o no se ha seleccionado -->
+                    <mat-error *ngIf="isTouched && !startDate">Debe seleccionar una fecha.</mat-error>
+                </mat-form-field>
+                
+              </div>
+      
+              <!-- Ejemplo 5: Estado de deshabilitado -->
+              <div *ngIf="row.example === 5">
+                <mat-form-field appearance="fill">
+                  <mat-label>Fecha deshabilitada</mat-label>
+                  <input matInput [matDatepicker]="picker6" [(ngModel)]="startDate" placeholder="DD/MM/YYYY" disabled>
+                  <mat-datepicker-toggle matSuffix [for]="picker6" disabled></mat-datepicker-toggle>
+                  <mat-datepicker #picker6 disabled></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </mat-cell>
+          </ng-container>
+          
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        
+        </mat-table>
+      </div>
+      
+      
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <!-- Referencias -->
+        <h3>Referencias de uso del componente en proyectos TGR</h3>
+        <ul>
+            <li>
+                <a href="" target="_blank" >Filtros de búsqueda en Gestor de archivos,  al seleccionar fecha de recepción "personalizado" se habilita el ingreso de periodo.</a>
+            </li>
+            <li>
+                <a href="" target="_blank" >Inicio de proceso de Conciliación bancaria con formato Mes y Día. </a>
+            </li>
+            <li>
+                <a href="" target="_blank" >Ingreso de nueva etapa de la demanda con selección de fecha de la etapa, y fecha de resolución. </a>
+            </li>
+        </ul>
+        <h3>Referencias de uso del componente en otros SD</h3>
+        <ul>
+            <li>
+                <a href="https://jqueryui.com/datepicker/" target="_blank">jQuery UI</a>
+            </li>
+            <li>
+                <a href="https://learn.microsoft.com/es-es/dotnet/api/system.windows.controls.datepicker?view=windowsdesktop-8.0" target="_blank">Microsoft</a>
+            </li>
+            <li>
+                <a href="https://ant.design/components/date-picker" target="_blank">Ant Design System</a>
+            </li>
+            <li>
+                <a href="https://mui.com/x/react-date-pickers/date-picker/?srsltid=AfmBOopP1PA5yw941HNaaeoNDoM2rr9ZcOHY5F4TZgTAG9UZfmfa7M-l" target="_blank">MUI X</a>
+            </li>
+            <li>
+                <a href="https://primevue.org/datepicker/" target="_blank">Prime Vue Design System</a>
+            </li>
+        </ul>   
+    </div>
+</div>

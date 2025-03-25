@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-header>
+    <mat-button-toggle-group [(value)]="selectedTab" (change)="onTabChange($event.value)">
+      <mat-button-toggle value="html">HTML</mat-button-toggle>
+      <mat-button-toggle value="ts">TypeScript</mat-button-toggle>
+      <mat-button-toggle value="scss">SCSS</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <!-- Botón de copiar -->
+    <button mat-icon-button class="copy-btn" (click)="copyToClipboard()">
+      <mat-icon>content_copy</mat-icon>
+    </button>
+
+    <!-- Mensaje de copiado -->
+    <span class="copied-message" *ngIf="copied">Copiado!</span>
+  </mat-card-header>
+
+  <mat-card-content>
+    <pre class="code-block"><code [innerText]="getCodeContent()"></code></pre>
+  </mat-card-content>
+</mat-card>

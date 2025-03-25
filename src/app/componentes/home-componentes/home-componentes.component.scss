@@ -1,0 +1,37 @@
+
+.mdl-cell {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0;
+  
+    .example-card {
+
+      img[mat-card-image] {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      mat-card-content {
+        color: #555;
+      }
+    }
+  }
+  
+  // Ajuste responsivo: en pantallas más pequeñas, cambia a 2 o 1 columna
+  @media (max-width: 1024px) {
+    .mdl-cell {
+      grid-template-columns: repeat(2, 1fr); // 2 columnas en tablets
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .mdl-cell {
+      grid-template-columns: 1fr; // 1 columna en celulares
+    }
+  }
+  

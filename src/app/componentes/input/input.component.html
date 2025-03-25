@@ -1,0 +1,301 @@
+<div class="container mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>Input</h1>
+        <a href="https://v17.material.angular.io/components/input/overview" class="enlace-con-imagen" target="_blank">
+            <img src="assets/imagenes_general/angular-logo.png" alt="Icono" class="icono-enlace">
+            Enlace al componente original
+        </a>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Descripción</h3>
+        <p>El Input es un campo de entrada de texto, que tiene por objetivo servir de entrada para el ingreso/captura de información opcional u obligatoria en formularios y otros contextos interactivos.</p>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Uso del componente</h3>
+        <p>El Input se debe utilizar cuando se requiera capturar información de la persona usuaria, como nombres, correos electrónicos, contraseñas o números. Algunos ejemplos incluyen: formulario de registro o inicio de sesión, campos para completar datos personales, y búsquedas dentro de la plataforma.</p>
+        <ul>
+            <li>                    
+                <p>
+                    Se deben usar etiquetas visibles y descriptivas para cada campo de entrada, es fundamental para la prevención de errores, indicar claramente el formato esperado (“Ejemplo: nombre&#64;correo.com”).
+                </p>
+            </li>
+            <li>
+                <p>
+                    En algunos casos, los datos ingresados no cumplen con el formato o los requisitos esperados, como el tipo o la cantidad de caracteres permitidos, lo que genera un error en la captura. Para estos escenarios, es fundamental mostrar mensajes de error o ayuda accesibles, que indiquen validaciones en tiempo real o proporcionen sugerencias adicionales para corregir la entrada.
+                </p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">    
+        <h3>Diseño y Formato del componente</h3>
+        <p>Un input se compone de los siguientes elementos:</p>
+        <ul>
+            <li>
+                <p>
+                    Campo de entrada (input): Permite a la persona usuaria ingresar texto. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Label: Es el título, describe el propósito del campo, ej. nombre, teléfono, dirección, etc.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Placeholder:  Texto dentro del input que describe o sugiere un termino o una acción, por ej: "Escribe o selecciona".
+                </p>
+            </li>
+            <li>
+                <p>
+                    Helper: Texto utilizado para la muestra de mensajes de error o ayuda.
+                </p>
+            </li>
+        </ul>
+        <p>Legibilidad del contenido del componente</p>
+        <ul>
+            <li>
+                <p>
+                    El ancho del input debe permitir la lectura de valores.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Dependiendo del contexto de uso, se debe tener un ancho mínimo﻿.
+                </p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Criterios de accesibilidad</h3>
+
+        <h4>Criterios Transversales</h4>
+        <ol>
+            <li>
+                <p>
+                    Contraste: El campo de entrada debe tener suficiente contraste con el fondo para asegurar legibilidad.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Navegación por teclado: El campo debe ser accesible con Tab, y el valor debe poder modificarse con las teclas correspondientes. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Atributos ARIA: El componente input puede ser descriptivo por si mismo. Sin embargo, hay casos en donde se necesita un contexto adicional:
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            Si el input no tiene una etiqueta visible, debe agregarse un aria-labelledby para describir su propósito.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Se debe utilizar aria-label en casos en que no basta solo con el label por defecto, y se requiere dar más contexto. Ej label: correo electrónico, aria: Correo electrónico del usuario.   
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Usar aria-describedby en casos en donde sea fundamental entregar una explicación clara. Ej "label: dirección tutor,  aria: ingresa la dirección de domicilio del tutor o persona cuidadora, incluyendo calle, número y ciudad.
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>
+                    Compatibilidad con lectores de pantalla: Incluir etiquetas claras con label o aria-label. Anunciar errores con aria-live="assertive".
+                </p>
+            </li>
+        </ol>
+        <h4>Criterios Específicos</h4>
+        <ol>
+            <li>
+                <p>
+                    Mensajes de error:
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            Si el input tiene un mensaje de ayuda o error, debe estar vinculado mediante aria-describedby, asegurando que los lectores de pantalla lo anuncien.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Cuando haya un error, el atributo aria-invalid="true" debe estar presente.
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>
+                    Estado del input perceptible:
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            Los estados del input (habilitado, deshabilitado, solo lectura, con error) deben ser perceptibles visualmente y por tecnologías asistivas.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Un input deshabilitado debe tener aria-disabled="true" si se necesita que los lectores de pantalla lo anuncien.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Un input de solo lectura puede incluir aria-readonly="true".
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>
+                    Uso de color: Evitar dependencias del color, acompañar los cambios de estado (error, deshabilitado) con iconos o mensajes.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Etiquetado HTML semántico:
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            id="full-name" y name="full-name": Se usan cuando es necesario asociar el campo de entrada con etiquetas label o para referenciarlo en formularios y scripts.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            aria-required="true": Se usa en casos donde no se emplea el atributo required, pero es necesario indicar la obligatoriedad del campo para tecnologías de asistencia. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            aria-describedby="name-helper": Relaciona el input con el mensaje de ayuda, como mat-hint.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            placeholder="Ingresa tu nombre completo" : Solo en casos donde no se pueda usar una etiqueta label visible, aunque no es recomendable depender solo del placeholder para identificar el campo. 
+                        </p>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+        
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Casos de uso</h3>
+        <mat-table [dataSource]="dataSource" matSort class="tgr-responsive-table with-title">
+            <ng-container matColumnDef="tipo">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Tipo </mat-header-cell>
+                <mat-cell *matCellDef="let row" data-label="Tipo">
+                    <span class="element-table">{{ row.tipo }}</span>
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="input">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Input </mat-header-cell>
+                <mat-cell *matCellDef="let row" data-label="Input">
+                    <!-- Input simple -->
+                    <div *ngIf="row.tipo === 'Input simple: El input está vacío y no tiene foco.'">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Input Simple</mat-label>
+                            <input matInput placeholder="Ingresa algo...">
+                        </mat-form-field>
+                    </div>
+                    
+                    <!-- Input con foco -->
+                    <div *ngIf="row.tipo === 'Input con focus: La etiqueta label se desplaza cuando se da foco.'">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Input con Focus</mat-label>
+                            <input matInput placeholder="Ingresa algo..." (focus)="onFocus()">
+                        </mat-form-field>
+                    </div>
+
+                    <div *ngIf="row.tipo === 'Input activo: La etiqueta label permanece elevada.'">
+                        <mat-form-field appearance="fill" floatLabel="always">
+                            <mat-label>Input Activo</mat-label>
+                            <input matInput placeholder="Ingresa algo..." [(ngModel)]="activeInput">
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Input rellenado -->
+                    <div *ngIf="row.tipo === 'Input rellenado: El input ya contiene información.'">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Input Rellenado</mat-label>
+                            <input matInput placeholder="Ingresa algo..." [(ngModel)]="filledInput" value="Texto ingresado">
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Input con error -->
+                    <div *ngIf="row.tipo === 'Input con requisito no cumplido: Error en el formato.'">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Input Requisito no cumplido</mat-label>
+                            <input matInput placeholder="Ingresa algo..." [ngClass]="{'error': error}">
+                            <mat-hint *ngIf="error" style="color: red;">Formato no válido</mat-hint>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Input con icono -->
+                    <div *ngIf="row.tipo === 'Input con icono: El input incluye un icono.'">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Input con Icono</mat-label>
+                            <input matInput placeholder="Buscar...">
+                            <mat-icon matSuffix>search</mat-icon>
+                        </mat-form-field>
+                    </div>
+                    
+                    <!-- Input deshabilitado -->
+                    <div *ngIf="row.tipo === 'Input deshabilitado: El input no permite la edición.'">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Input Deshabilitado</mat-label>
+                            <input matInput placeholder="No editable" disabled>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Input de solo lectura -->
+                    <div *ngIf="row.tipo === 'Input de solo lectura: El input no puede ser modificado.'">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Input de Solo Lectura</mat-label>
+                            <input matInput placeholder="Texto solo lectura" value="Texto no editable" readonly>
+                        </mat-form-field>
+                    </div>
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+      
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <!-- Referencias -->
+        <h3>Referencias de uso del componente en proyectos TGR</h3>
+        <ul>
+            <li>
+                <a href="" target="_blank" >Uso de inputs en formulario de búsqueda en proyecto Concobra.</a>
+            </li>
+        </ul>
+        <h3>Referencias de uso del componente en otros SD</h3>
+        <ul>
+            <li>
+                <a href="https://carbondesignsystem.com/components/text-input/usage/" target="_blank">Carbon Design System</a>
+            </li>
+            <li>
+                <a href="https://atlassian.design/components/textfield/examples" target="_blank">Atlassian Design System</a>
+            </li>
+            <li>
+                <a href="https://cloudscape.design/components/input/" target="_blank">Cloudscape Design System</a>
+            </li>
+            <li>
+                <a href="https://mui.com/base-ui/react-input/" target="_blank">MUI Base</a>
+            </li>
+        </ul>   
+    </div>
+</div>
